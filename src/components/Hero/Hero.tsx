@@ -1,9 +1,9 @@
 import React from 'react';
-import { Avatar, AvatarFallback, AvatarImage } from '../shadcn-ui/avatar';
 import { Button } from '../shadcn-ui/button';
-import { BugOff, Cpu, Github, Play } from 'lucide-react';
+import { Github, Play } from 'lucide-react';
+import { HeroAvatar } from './HeroAvatar/HeroAvatar';
 import { skills } from '../../lib/testing/mocks/skills';
-export const Home = () => {
+export const Hero = () => {
   return (
           <section id="home" className="relative py-20 lg:py-32">
         <div className="container mx-auto px-4">
@@ -23,7 +23,7 @@ export const Home = () => {
                       ARBIZU
                     </span>
                   </h1>
-                  <div className="text-xl text-gray-300 font-mono">
+                  <div className=" text-sm md:text-xl text-gray-300 font-mono">
                     <span className="text-green-400">&rarr;</span> FullStack_Developer.exe
                     <br />
                     <span className="text-green-400">&rarr;</span> Blockchain_Enthusiast.dll
@@ -49,23 +49,7 @@ export const Home = () => {
                 </div>
               </div>
 
-              <div className="relative">
-                <div className="w-80 h-80 mx-auto relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 rounded-full blur-2xl animate-pulse" />
-                  <Avatar className="w-80 h-80 border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/25">
-                    <AvatarImage src="/api/placeholder/320/320" alt="Alex Cipher" />
-                    <AvatarFallback className="text-6xl bg-gradient-to-r from-cyan-500 to-purple-600">CA</AvatarFallback>
-                  </Avatar>
-                  
-                  {/* Floating Tech Icons */}
-                  <div className="absolute -top-4 -left-4 bg-slate-800 border border-cyan-500/50 rounded-lg p-2 animate-bounce" style={{ animationDelay: '1s' }}>
-                    <Cpu className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div className="absolute -bottom-4 -right-4 bg-slate-800 border border-purple-500/50 rounded-lg p-2 animate-bounce" style={{ animationDelay: '2s' }}>
-                    <BugOff className="w-6 h-6 text-purple-400" />
-                  </div>
-                </div>
-              </div>
+              <HeroAvatar />
             </div>
 
             {/* Skills Grid */}
@@ -74,13 +58,13 @@ export const Home = () => {
                 <div key={index} className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-6 group hover:border-cyan-500/50 transition-all duration-300">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-mono text-sm text-cyan-400">{skill.category}</span>
-                    <span className="font-mono text-xs text-gray-400">{skill.level}%</span>
+                    <span className="font-mono text-xs text-gray-400">{skill.maxProgress}%</span>
                   </div>
                   <div className="font-semibold mb-3">{skill.name}</div>
                   <div className="w-full bg-slate-700 rounded-full h-2">
                     <div 
                       className="bg-gradient-to-r from-cyan-500 to-purple-600 h-2 rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-cyan-500/50" 
-                      style={{ width: `${skill.level}%` }}
+                      style={{ width: `${skill.maxProgress}%` }}
                     />
                   </div>
                 </div>
