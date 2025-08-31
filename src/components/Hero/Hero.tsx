@@ -1,8 +1,10 @@
+import { SkillsGrid } from '../SkillsGrid/SkillsGrid';
 import React from 'react';
 import { Button } from '../shadcn-ui/button';
 import { Github, Play } from 'lucide-react';
 import { HeroAvatar } from './HeroAvatar/HeroAvatar';
 import { skills } from '../../lib/testing/mocks/skills';
+import ColoredAnchorButton from '../AnchorButtons/ColoredAnchorButton/Index';
 export const Hero = () => {
   return (
           <section id="home" className="relative py-20 lg:py-32">
@@ -38,6 +40,9 @@ export const Hero = () => {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
+                  <ColoredAnchorButton link="/contact" text='RUN_PROJECTS.exe' >
+                    <Play className="w-4 h-4" />
+                  </ColoredAnchorButton>
                   <Button size="lg" className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 font-mono gap-2">
                     <Play className="w-4 h-4" />
                     RUN_PROJECTS.exe
@@ -53,23 +58,7 @@ export const Hero = () => {
             </div>
 
             {/* Skills Grid */}
-            <div className="mt-20 grid md:grid-cols-4 gap-6">
-              {skills.map((skill, index) => (
-                <div key={index} className="bg-slate-800/50 border border-cyan-500/20 rounded-lg p-6 group hover:border-cyan-500/50 transition-all duration-300">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="font-mono text-sm text-cyan-400">{skill.category}</span>
-                    <span className="font-mono text-xs text-gray-400">{skill.maxProgress}%</span>
-                  </div>
-                  <div className="font-semibold mb-3">{skill.name}</div>
-                  <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-cyan-500 to-purple-600 h-2 rounded-full transition-all duration-1000 group-hover:shadow-lg group-hover:shadow-cyan-500/50" 
-                      style={{ width: `${skill.maxProgress}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
+            <SkillsGrid />
           </div>
         </div>
       </section>

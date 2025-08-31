@@ -20,7 +20,7 @@ export const Header = () => {
   ]
 
   return (
-    <header className="relative border-b border-cyan-500/20 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className=" border-b border-cyan-500/20 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -84,7 +84,7 @@ export const Header = () => {
                 <div className="border-t border-cyan-500/20 my-2" />
                 <DropdownMenuItem asChild>
                   <div className="px-2 py-1.5">
-                    <ColoredAnchorButton text='INITIALIZE_CONTACT' />
+                    <ColoredAnchorButton link="/contact" text='INITIALIZE_CONTACT' />
                   </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -93,7 +93,7 @@ export const Header = () => {
 
           {/* Desktop Contact Button - Hidden on mobile, visible on lg+ */}
           <div className="hidden lg:block">
-            <ColoredAnchorButton text='INITIALIZE_CONTACT' />
+            <ColoredAnchorButton link="/contact" text='INITIALIZE_CONTACT' />
           </div>
         </nav>
       </div>
