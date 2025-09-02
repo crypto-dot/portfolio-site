@@ -9,18 +9,20 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '../shadcn-ui/dropdown-menu'
+import { TextRevealListItems } from '../AnimatedTextReveal/AnimatedTextReveal'
+import { AnchorItemProps } from '../AnimatedTextReveal/AnimatedTextReveal.types'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const navigationItems = [
-    { href: '#home', number: '01.', label: 'HOME' },
-    { href: '#projects', number: '02.', label: 'PROJECTS' },
-    { href: '#blog', number: '03.', label: 'BLOG' },
+  const navigationItems : AnchorItemProps[] = [
+    { href: '#home', number: 1, label: 'HOME' },
+    { href: '#projects', number: 2, label: 'PROJECTS' },
+    { href: '#blog', number: 3, label: 'BLOG' },
   ]
 
   return (
-    <header className=" border-b border-cyan-500/20 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="bg-gray-400/20 backdrop-blur-[4px] sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -32,22 +34,13 @@ export const Header = () => {
             </div>
             <div>
               <div className="font-mono text-base md:text-lg font-bold text-cyan-400">./carlosarbizu</div>
-              <div className="text-xs text-gray-400">SYSTEM_ONLINE</div>
+              <div className="text-xs">SYSTEM_ONLINE</div>
             </div>
           </div>
           
           {/* Desktop Navigation - Hidden on mobile, visible on lg+ */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-mono hover:text-cyan-400 transition-colors relative group"
-              >
-                <span className="text-cyan-400 mr-1">{item.number}</span>{item.label}
-                <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300" />
-              </a>
-            ))}
+              <TextRevealListItems items={navigationItems} flexDirection="row" isAnchor={true} />
           </div>
 
           {/* Mobile Dropdown Menu - Visible on mobile, hidden on md+ */}

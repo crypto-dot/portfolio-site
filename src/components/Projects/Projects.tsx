@@ -78,9 +78,10 @@ export const Projects = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono gap-2">
-              LOAD_MORE_PROJECTS <ChevronRight className="w-4 h-4" />
-            </Button>
+            <WhiteAnchorButton text="" link="/projects" >
+            LOAD_MORE_PROJECTS
+                    <ChevronRight className="w-4 h-4" />
+            </WhiteAnchorButton>
           </div>
         </div>
       </section>

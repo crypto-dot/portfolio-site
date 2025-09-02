@@ -5,6 +5,7 @@ import { Badge } from '../shadcn-ui/badge'
 import { Button } from '../shadcn-ui/button'
 import { ChevronRight, Calendar, Terminal } from 'lucide-react'
 import { blogPosts } from '../../lib/testing/mocks/blog/blog'
+import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
 export const BlogList = () => {
   return (
           <section id="blog" className="relative py-20">
@@ -68,9 +69,10 @@ export const BlogList = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono gap-2">
-              ACCESS_ALL_LOGS <ChevronRight className="w-4 h-4" />
-            </Button>
+          <WhiteAnchorButton text="" link="/blog" >
+            ACCESS_ALL_LOGS
+                    <ChevronRight className="w-4 h-4" />
+            </WhiteAnchorButton>
           </div>
         </div>
       </section>

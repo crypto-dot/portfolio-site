@@ -63,13 +63,13 @@ const Home = () => {
             <div>
               <h3 className="font-mono font-semibold mb-4 text-cyan-400">NAVIGATION.MAP</h3>
               <div className="space-y-2">
-                <a href="#projects" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm">
+                <a href="#projects" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm w-fit">
                   <span className="text-cyan-400 mr-2">&rarr;</span>PROJECTS
                 </a>
-                <a href="#blog" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm">
+                <a href="#blog" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm w-fit">
                   <span className="text-cyan-400 mr-2">&rarr;</span>BLOG
                 </a>
-                <a href="#contact" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm">
+                <a href="#contact" className="block text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm w-fit">
                   <span className="text-cyan-400 mr-2">&rarr;</span>CONTACT
                 </a>
               </div>

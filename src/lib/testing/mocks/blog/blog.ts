@@ -12,10 +12,10 @@ export const blogPosts: BlogPost[] = [
     {
       id: 2,
       title: "Artificial Intelligence ? What is it?",
-      excerpt: "Essential security patterns and best practices for developing robust smart contracts.",
-      publishedAt: "2024-09-01",
+      excerpt: "AI is a broad term that encompasses a range of technologies and applications.",
+      publishedAt: "2025-09-01",
       author: "Carlos Arbizu",
-      tags: ["Artificial Intelligence", "AI", "Machine Learning", "Generative AI", "LLMs", ],
+      tags: ["Artificial Intelligence", "AI", "Machine Learning", "Generative AI", "LLMs", "Deep Learning", "Neural Networks", "Reinforcement Learning", "Natural Language Processing" ],
       readTime: "12 min"
     }
   ];
