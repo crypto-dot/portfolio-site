@@ -4,6 +4,8 @@ import { Badge } from '../shadcn-ui/badge'
 import { Button } from '../shadcn-ui/button'
 import { ChevronRight, ExternalLink, Github, Terminal } from 'lucide-react'
 import { featuredProjects } from '../../lib/testing/mocks/project'
+import { ColoredAnchorButton } from '../AnchorButtons/ColoredAnchorButton/ColoredAnchorButton'
+import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
 export const Projects = () => {
   return (
           <section id="projects" className="relative py-20 bg-slate-900/50">
@@ -21,7 +23,7 @@ export const Projects = () => {
               <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300">
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={project.imageUrl} 
                     alt={project.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -60,14 +62,16 @@ export const Projects = () => {
                 </CardContent>
                 
                 <CardFooter className="flex gap-2">
-                  <Button size="sm" variant="outline" className="gap-2 flex-1 border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono">
+                  {project.githubUrl && (
+                  <ColoredAnchorButton text="SOURCE" link={project.githubUrl} >
                     <Github className="w-4 h-4" />
-                    SOURCE
-                  </Button>
-                  <Button size="sm" className="gap-2 flex-1 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 font-mono">
+                  </ColoredAnchorButton>
+                  )}
+                  {project.liveUrl && (
+                  <WhiteAnchorButton text="LAUNCH" link={project.liveUrl} >
                     <ExternalLink className="w-4 h-4" />
-                    DEPLOY
-                  </Button>
+                  </WhiteAnchorButton>
+                  )}
                 </CardFooter>
               </Card>
             ))}

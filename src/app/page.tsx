@@ -9,10 +9,7 @@ import Projects from '@/components/Projects/Index';
 import Hero from '@/components/Hero/Index';
 import BlogList from '@/components/BlogList/Index';
 import Header from '@/components/Header/Index';
-const DesignVariation2 = () => {
-  // Sample data - in real app, this would come from Strapi
-
-
+const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
@@ -95,4 +92,4 @@ const DesignVariation2 = () => {
   );
 };
 
-export default DesignVariation2;
+export default Home;

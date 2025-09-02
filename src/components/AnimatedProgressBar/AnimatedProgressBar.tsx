@@ -8,10 +8,9 @@ export const AnimatedProgressBar = ({maxProgress, initialProgress}: {maxProgress
   useEffect(() => {
     const timer = setTimeout(() => {
         setProgress(maxProgress)
-        console.log('Setting progress to:', maxProgress) // Log the target value instead
     }, 100)
     return () => clearTimeout(timer)
-  },[]) // Add maxProgress to dependency array
+  },[])
 
   return <Progress value={progress}  />
 }
