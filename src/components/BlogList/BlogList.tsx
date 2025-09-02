@@ -46,7 +46,7 @@ export const BlogList = () => {
                   </div>
                 </CardContent>
                 
-                <CardFooter className="flex items-center justify-between">
+                <CardFooter className="flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-3">
                     <Avatar className="w-8 h-8 border border-cyan-500/50">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />
