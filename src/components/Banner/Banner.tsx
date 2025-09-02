@@ -3,7 +3,7 @@
 import { Ticker } from "motion-plus/react"
 import { motion } from "motion/react"
 
-function Photo({ src, aspectRatio }: { src: string; }) {
+function Photo({ src }: { src: string; }) {
     return (
         <motion.img
             className="photo"
