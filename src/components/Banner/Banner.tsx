@@ -2,14 +2,17 @@
 
 import { Ticker } from "motion-plus/react"
 import { motion } from "motion/react"
-
+import Image from "next/image"
 function Photo({ src }: { src: string; }) {
     return (
-        <motion.img
-            className="photo"
-            src={`${src}`}
-            alt={"Photo of a cyclist in Amsterdam"}
-        />
+        <motion.div className="photo">
+            <Image className="scale-160"
+                src={`/images/cautionTape.png`}
+                alt="caution tape"
+                width={200}
+                height={200}
+            />
+        </motion.div>
     )
 }
 

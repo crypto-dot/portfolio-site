@@ -20,7 +20,7 @@ export const Projects = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300">
+              <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 pt-0 overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.imageUrl} 
@@ -29,7 +29,7 @@ export const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4">
-                    <Badge variant="outline" className="border-green-500/50 text-green-400 bg-green-500/10 font-mono">
+                    <Badge className=" text-cyan-400  font-mono">
                       {project.status}
                     </Badge>
                   </div>
@@ -61,7 +61,7 @@ export const Projects = () => {
                   </div>
                 </CardContent>
                 
-                <CardFooter className="flex gap-2">
+                <CardFooter className="flex gap-2 mt-auto">
                   {project.githubUrl && (
                   <ColoredAnchorButton text="SOURCE" link={project.githubUrl} >
                     <Github className="w-4 h-4" />

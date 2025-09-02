@@ -9,7 +9,7 @@ export const HeroAvatar = () => {
     <div className="w-80 h-80 mx-auto relative">
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 rounded-full blur-2xl animate-pulse" />
       <Avatar className="w-80 h-80 border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/25">
-        <AvatarImage src="/api/placeholder/320/320" alt="Alex Cipher" />
+        <AvatarImage alt="Alex Cipher" />
         <AvatarFallback className="text-6xl bg-gradient-to-r from-cyan-500 to-purple-600">CA</AvatarFallback>
       </Avatar>
       
