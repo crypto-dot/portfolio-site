@@ -5,7 +5,7 @@ export const featuredProjects: Project[] = [
       id: 1,
       title: "Pylot",
       description: "Multi-tenant platform powering 200+ sites with a React frontend and headless WordPress CMS",
-      imageUrl: "images/pylot.png",
+      imageUrl: "images/Pylot.png",
       technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint"],
       liveUrl: "https://imaginuity.com/pylot",
       status: "Active"
@@ -14,7 +14,7 @@ export const featuredProjects: Project[] = [
       id: 2,
       title: "Dallas Market Center",
       description: "Developed and optimized a large-scale web platform using C#, Razor Pages, jQuery, and SCSS, supporting dynamic UI components and complex business logic.",
-      imageUrl: "images/dallasmarketcenter.png",
+      imageUrl: "images/DallasMarketCenter.png",
       technologies: ["Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
       liveUrl: "https://dallasmarketcenter.com",
       status: "Active"
