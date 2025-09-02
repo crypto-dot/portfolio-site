@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfoli of Carlos Arbizu",
+  title: "Carlos Arbizu's Portfolio",
   description: "Portfolio of Carlos Arbizu",
 };
 

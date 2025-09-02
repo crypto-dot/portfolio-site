@@ -2,22 +2,22 @@ import { BlogPost } from "@/lib/types/blog";
 export const blogPosts: BlogPost[] = [
     {
       id: 1,
-      title: "The Future of Web Development: Beyond the Browser",
-      excerpt: "Exploring emerging technologies that will reshape how we build and interact with web applications.",
-      publishedAt: "2024-01-15",
-      author: "Alex Cipher",
+      title: "Hello World",
+      excerpt: "This is my first blog post",
+      publishedAt: "2025-09-01",
+      author: "Carlos Arbizu",
       authorAvatar: "/api/placeholder/40/40",
-      tags: ["WebAssembly", "Edge Computing", "Future Tech"],
+      tags: ["Hello World", "First Blog Post", "Web Development", "General"],
       readTime: "8 min"
     },
     {
       id: 2,
-      title: "Building Secure Smart Contracts: A Deep Dive",
+      title: "Artificial Intelligence ? What is it?",
       excerpt: "Essential security patterns and best practices for developing robust smart contracts.",
-      publishedAt: "2024-01-10",
-      author: "Alex Cipher",
+      publishedAt: "2024-09-01",
+      author: "Carlos Arbizu",
       authorAvatar: "/api/placeholder/40/40",
-      tags: ["Blockchain", "Security", "Solidity"],
+      tags: ["Artificial Intelligence", "AI", "Machine Learning", "Generative AI", "LLMs", ],
       readTime: "12 min"
     }
   ];
