@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, {useRef, useEffect} from 'react';
 import { Button } from '@/components/shadcn-ui/button';
 import { 
   Github, 
@@ -9,8 +10,15 @@ import Projects from '@/components/Projects/Index';
 import Hero from '@/components/Hero/Index';
 import BlogList from '@/components/BlogList/Index';
 import Header from '@/components/Header/Index';
+import { Banner } from '@/components/Banner/Banner';
 const Home = () => {
-
+  const yearContainer = useRef<HTMLDivElement>(null);
+  const year = new Date().getFullYear();
+  useEffect(() => {
+    if (yearContainer.current) {
+      yearContainer.current.innerHTML = year.toString();
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Animated Background */}
@@ -19,10 +27,9 @@ const Home = () => {
         <div className="absolute top-0 left-1/4 w-100 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
       </div>
-
       {/* Header */}
       <Header />
-
+      <Banner />
       {/* Hero Section */}
       <Hero />
       {/* Projects Section */}
@@ -83,7 +90,7 @@ const Home = () => {
           
           <div className="border-t border-cyan-500/20 mt-8 pt-8 text-center">
             <p className="text-gray-400 font-mono text-sm">
-              <span className="text-cyan-400">©</span> 2024 ALEXCIPHER.DEV | ALL_RIGHTS_RESERVED
+              <span className="text-cyan-400">©</span> <span ref={yearContainer}></span> Arbizu.dev | ALL_RIGHTS_RESERVED
             </p>
           </div>
         </div>
