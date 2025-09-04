@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Carlos Arbizu's Portfolio",
-  description: "Portfolio of Carlos Arbizu",
+  title: "Carlos Arbizu | Developer",
+  description: "Full stack developer creating AI-powered web applications that solve real business problems. See my portfolio of machine learning and software development projects.",
 };
 
 export default function RootLayout({
