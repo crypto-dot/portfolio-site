@@ -6,9 +6,10 @@ import { Button } from '../shadcn-ui/button'
 import { ChevronRight, Calendar, Terminal } from 'lucide-react'
 import { blogPosts } from '../../lib/testing/mocks/blog/blog'
 import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
+import { motion } from 'motion/react'
 export const BlogList = () => {
   return (
-          <section id="blog" className="relative py-20">
+          <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }} id="blog" className="relative py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="text-cyan-400 font-mono text-sm mb-2">KNOWLEDGE_BASE.MD</div>
@@ -19,8 +20,9 @@ export const BlogList = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {blogPosts.map((post) => (
-              <Card key={post.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 cursor-pointer">
+            {blogPosts.map((post, index) => (
+              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} key={post.id}>
+              <Card key={post.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 cursor-pointer h-[100%]">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -65,6 +67,7 @@ export const BlogList = () => {
                   <ChevronRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
                 </CardFooter>
               </Card>
+              </motion.div>
             ))}
           </div>
           
@@ -75,6 +78,6 @@ export const BlogList = () => {
             </WhiteAnchorButton>
           </div>
         </div>
-      </section>
+      </motion.section>
   )
 }

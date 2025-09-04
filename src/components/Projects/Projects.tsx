@@ -6,9 +6,12 @@ import { ChevronRight, ExternalLink, Github, Terminal } from 'lucide-react'
 import { featuredProjects } from '../../lib/testing/mocks/project'
 import { ColoredAnchorButton } from '../AnchorButtons/ColoredAnchorButton/ColoredAnchorButton'
 import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
+import { motion } from 'motion/react'
 export const Projects = () => {
+
+
   return (
-          <section id="projects" className="relative py-20 bg-slate-900/50">
+          <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }} id="projects" className="relative py-20 bg-slate-900/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <div className="text-cyan-400 font-mono text-sm mb-2">PROJECTS_DATABASE.JSON</div>
@@ -20,7 +23,8 @@ export const Projects = () => {
           
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 pt-0 overflow-hidden">
+              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1  }} viewport={{ once: true }} key={project.id}>
+              <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 pt-0 overflow-hidden h-[100%]">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.imageUrl} 
@@ -74,6 +78,7 @@ export const Projects = () => {
                   )}
                 </CardFooter>
               </Card>
+              </motion.div>
             ))}
           </div>
           
@@ -84,6 +89,6 @@ export const Projects = () => {
             </WhiteAnchorButton>
           </div>
         </div>
-      </section>
+      </motion.section>
   )
 }
