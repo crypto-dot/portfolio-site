@@ -22,7 +22,7 @@ export const BlogList = () => {
           <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {blogPosts.map((post, index) => (
               <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} key={post.id}>
-              <Card key={post.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 cursor-pointer h-[100%]">
+              <Card key={post.id} className=" transition-all duration-300 cursor-pointer h-[100%]">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">

@@ -62,7 +62,7 @@ export const Hero = () => {
                 </AnimatedText>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <ColoredAnchorButton text="RUN_PROJECTS.exe" link="/projects" >
+                   <ColoredAnchorButton text="CONTACT_ME.exe" link="/contact" >
                     <Play  className="w-4 h-4" />
                    </ColoredAnchorButton>
                   <WhiteAnchorButton text="ACCESS_GITHUB" link="https://github.com/crypto-dot" >

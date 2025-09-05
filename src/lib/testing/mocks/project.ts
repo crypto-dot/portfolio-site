@@ -8,7 +8,7 @@ export const featuredProjects: Project[] = [
       imageUrl: "images/Pylot.png",
       technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint"],
       liveUrl: "https://imaginuity.com/pylot",
-      status: "Active"
+      status: "Live"
     },
     {
       id: 2,
@@ -17,7 +17,7 @@ export const featuredProjects: Project[] = [
       imageUrl: "images/DallasMarketCenter.png",
       technologies: ["Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
       liveUrl: "https://dallasmarketcenter.com",
-      status: "Active"
+      status: "Live"
     },
     {
       id: 3,
@@ -26,6 +26,6 @@ export const featuredProjects: Project[] = [
       imageUrl: "images/weBuyUglyHouses.png",
       technologies:  ["A-B testing", "Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
       liveUrl: "https://webuyuglyhouses.com",
-      status: "Active"
+      status: "Live"
     }
   ];

@@ -20,7 +20,7 @@ export const item = {
 
 export const text = {
     color: "#f5f5f5",
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     textTransform: "uppercase",
     display: "flex",
@@ -30,7 +30,7 @@ export const text = {
 } as const
 
 export const numberLabel = {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: "bold",
     textTransform: "uppercase",
     opacity: 0.5,

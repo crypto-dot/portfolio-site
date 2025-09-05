@@ -4,6 +4,7 @@ import "./globals.css";
 import { DefaultCursor } from "@/components/DefaultCursor/Cursor";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Footer } from "@/components/Footer/Footer"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,9 +31,10 @@ export default function RootLayout({
     <Analytics />
     <SpeedInsights />
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-slate-900 text-white pt-6`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

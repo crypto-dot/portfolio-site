@@ -14,17 +14,16 @@ export const Projects = () => {
           <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }} id="projects" className="relative py-20 bg-slate-900/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="text-cyan-400 font-mono text-sm mb-2">PROJECTS_DATABASE.JSON</div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 font-mono">ACTIVE_PROJECTS</h2>
+            <h2 className="text-2xl md:text-4xl font-bold mb-4 font-mono">PROJECTS</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Current development cycles focusing on next-generation technologies
+              Development cycles focusing on next-generation technologies 
             </p>
           </div>
           
           <div className="grid lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
               <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1  }} viewport={{ once: true }} key={project.id}>
-              <Card key={project.id} className="bg-slate-800/50 border-cyan-500/20 group hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-500/25 transition-all duration-300 pt-0 overflow-hidden h-[100%]">
+              <Card key={project.id} className=" group transition-all duration-300 pt-0 overflow-hidden h-[100%]">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.imageUrl} 
@@ -33,7 +32,7 @@ export const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   <div className="absolute top-4 right-4">
-                    <Badge className=" text-cyan-400  font-mono">
+                    <Badge className={`${project.status === 'Live' ? 'text-green-400 bg-[oklch(0.2525 0.0768 137.21 / 77%)]' : 'text-orange-400 bg-[oklch(0.577 0.245 27.325 / 77%)]'} font-mono backdrop-blur-[15px]`}>
                       {project.status}
                     </Badge>
                   </div>
@@ -44,7 +43,7 @@ export const Projects = () => {
                     <Terminal className="w-4 h-4 text-cyan-400" />
                     <span className="text-xs font-mono text-cyan-400">PROJECT_{String(index + 1).padStart(3, '0')}</span>
                   </div>
-                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono">
+                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono text-xl">
                     {project.title}
                   </CardTitle>
                   <CardDescription className="text-gray-300">
@@ -54,10 +53,10 @@ export const Projects = () => {
                 
                 <CardContent>
                   <div className="space-y-3">
-                    <div className="text-xs font-mono text-cyan-400 mb-2">TECH_STACK:</div>
+                    <h2 className="text-xs font-mono mb-2 text-white"> TECH_STACK:</h2>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="bg-purple-500/20 text-purple-300 border-purple-500/30 font-mono text-xs">
+                        <Badge key={tech} variant="secondary" className="border-purple-500/50 text-purple-300 bg-purple-500/10 font-mono text-xs ">
                           {tech}
                         </Badge>
                       ))}

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import { ColoredAnchorButton } from '../AnchorButtons/ColoredAnchorButton/ColoredAnchorButton'
-import { Terminal, Menu, X } from 'lucide-react'
+import { Terminal, Menu, X, Link } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,27 +16,15 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navigationItems : AnchorItemProps[] = [
-    { href: '#home', number: 1, label: 'HOME' },
-    { href: '#projects', number: 2, label: 'PROJECTS' },
-    { href: '#blog', number: 3, label: 'BLOG' },
+    { href: '/home', number: 1, label: 'HOME' },
+    { href: '/projects', number: 2, label: 'PROJECTS' },
+    { href: '/blog', number: 3, label: 'BLOG' },
   ]
 
   return (
-    <header className="bg-gray-400/20 backdrop-blur-[4px] sticky top-0 z-50">
+    <header className="bg-gray-400/20 backdrop-blur-[4px] sticky z-50  max-w-[500px] rounded-[30px] ml-auto mr-auto top-5">
       <div className="container mx-auto px-4 py-4">
-        <nav className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-lg flex items-center justify-center">
-                <Terminal className="w-5 h-5 text-black" />
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-            </div>
-            <div>
-              <div className="font-mono text-base md:text-lg font-bold text-cyan-400">./carlosarbizu</div>
-              <div className="text-xs">SYSTEM_ONLINE</div>
-            </div>
-          </div>
+        <nav className="flex items-center justify-center">
           
           {/* Desktop Navigation - Hidden on mobile, visible on lg+ */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -60,33 +48,22 @@ export const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 align="end"
-                className="w-52 bg-slate-800/95 border-cyan-500/20 backdrop-blur-sm mt-2"
+                className="w-52 bg-slate-800/95  backdrop-blur-sm mt-2"
               >
                 {navigationItems.map((item) => (
                   <DropdownMenuItem key={item.href} asChild>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-sm font-mono text-gray-300 hover:text-cyan-400 hover:bg-slate-700/50 transition-colors cursor-pointer"
                       onClick={() => setIsOpen(false)}
                     >
                       <span className="text-cyan-400 mr-2">{item.number}</span>
                       {item.label}
-                    </a>
+                    </Link>
                   </DropdownMenuItem>
                 ))}
-                <div className="border-t border-cyan-500/20 my-2" />
-                <DropdownMenuItem asChild>
-                  <div className="px-2 py-1.5">
-                    <ColoredAnchorButton link="/contact" text='INITIALIZE_CONTACT' />
-                  </div>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          </div>
-
-          {/* Desktop Contact Button - Hidden on mobile, visible on lg+ */}
-          <div className="hidden lg:block">
-            <ColoredAnchorButton link="/contact" text='INITIALIZE_CONTACT' />
           </div>
         </nav>
       </div>

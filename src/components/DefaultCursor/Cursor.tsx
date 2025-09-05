@@ -1,14 +1,7 @@
 "use client"
 
-import { Cursor, useCursorState, useMagneticPull } from "motion-plus/react"
-import { motion } from "motion/react"
-import { useRef } from "react"
-
+import { Cursor, useCursorState } from "motion-plus/react"
 export const DefaultCursor = () => {
-    const ref = useRef<HTMLButtonElement>(null)
-    const pull = useMagneticPull(ref, 0.2)
-
-    // Handle the color change when hovering over the Examples site popups
     const { zone } = useCursorState()
 
     return (
@@ -18,14 +11,19 @@ export const DefaultCursor = () => {
                 className="cursor"
                 variants={{
                     default: {
+                        color: "white",
+                        background: "white",
                         backgroundColor:
-                            zone === "overlay" ? "#eee" : "#7e7e7e",
+                            zone === "overlay" ? "#C5C6C6" : "#C5C6C6",
                     },
                     pointer: {
-                        backgroundColor: zone === "overlay" ? "#fff" : "#ddd",
+                        color: "white",
+                        background: "white",
+                        backgroundColor: zone === "overlay" ? "#C5C6C6" : "#C5C6C6",
                     },
                 }}
                 style={{
+                    color: "white",
                     borderRadius: 10,
                     mixBlendMode:
                         zone === "overlay" ? "difference" : "multiply",
