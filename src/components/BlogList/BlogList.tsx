@@ -19,7 +19,7 @@ export const BlogList = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 mx-auto">
             {blogPosts.map((post, index) => (
               <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} key={post.id}>
               <Card key={post.id} className=" transition-all duration-300 cursor-pointer h-[100%]">

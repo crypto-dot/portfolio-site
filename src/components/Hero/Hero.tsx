@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
           <section id="home" className="relative pt-10 pb-20 lg:pb-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className=" mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-2">
