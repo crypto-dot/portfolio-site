@@ -9,7 +9,6 @@ export const featuredProjects: Project[] = [
       imageUrl: "images/Pylot.png",
       technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint"],
       liveUrl: "https://imaginuity.com/pylot",
-      githubUrl: "https://github.com/carlosarbizu/pylot",
       status: "Live",
       category: "Full Stack",
       featured: true,
