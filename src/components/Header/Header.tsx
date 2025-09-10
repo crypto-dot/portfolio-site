@@ -103,7 +103,7 @@ export const Header = () => {
                     stiffness: 300,
                     damping: 30
                   }}
-                  className="absolute right-0 top-full mt-2 w-64 bg-slate-800/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl overflow-hidden z-50"
+                  className="absolute left-[-109px] top-full mt-2 w-64 bg-slate-800/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl overflow-hidden z-50"
                 >
                   {/* Dropdown Header */}
                   <motion.div 
@@ -152,7 +152,7 @@ export const Header = () => {
                             className="flex items-center gap-2 px-3 py-2 text-xs font-mono transition-all duration-300 cursor-pointer"
                             onClick={() => setIsOpen(false)}
                           >
-                             {item.label}
+                            {navigationIcons[item.label as keyof typeof navigationIcons]} {item.label}
       
                           </Link>
                         </motion.div>
