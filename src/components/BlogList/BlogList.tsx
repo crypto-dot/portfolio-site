@@ -72,7 +72,7 @@ export const BlogList = () => {
           </div>
           
           <div className="text-center mt-12">
-          <WhiteAnchorButton text="" link="/blog" >
+          <WhiteAnchorButton data-cursor-zone="blog" text="" link="/posts" >
             ACCESS_ALL_LOGS
                     <ChevronRight className="w-4 h-4" />
             </WhiteAnchorButton>

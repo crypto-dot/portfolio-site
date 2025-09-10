@@ -1,0 +1,323 @@
+"use client"
+import React, { useState } from 'react';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../shadcn-ui/card';
+import { Badge } from '../shadcn-ui/badge';
+import { Button } from '../shadcn-ui/button';
+import { Input } from '../shadcn-ui/input';
+import { ChevronRight, Search, ExternalLink, Github, Calendar, Clock, User, Filter, Code, Smartphone, Monitor, Server } from 'lucide-react';
+import { allProjects } from '../../lib/testing/mocks/project';
+import { motion } from 'motion/react';
+import { Project } from '../../lib/types/project';
+
+const categoryIcons = {
+  'Web Development': <Monitor className="w-4 h-4" />,
+  'AI/ML': <Code className="w-4 h-4" />,
+  'Mobile': <Smartphone className="w-4 h-4" />,
+  'Desktop': <Monitor className="w-4 h-4" />,
+  'Full Stack': <Server className="w-4 h-4" />,
+  'Frontend': <Monitor className="w-4 h-4" />,
+  'Backend': <Server className="w-4 h-4" />
+};
+
+const statusColors = {
+  'Live': 'bg-green-500/20 text-green-400 border-green-500/50',
+  'In Development': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50',
+  'Completed': 'bg-blue-500/20 text-blue-400 border-blue-500/50',
+  'Archived': 'bg-gray-500/20 text-gray-400 border-gray-500/50'
+};
+
+export const ProjectsPage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedStatus, setSelectedStatus] = useState<string | null>(null);
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState(false);
+
+  // Get all unique categories and statuses
+  const allCategories = Array.from(new Set(allProjects.map(project => project.category)));
+  const allStatuses = Array.from(new Set(allProjects.map(project => project.status)));
+
+  // Filter projects based on search term, category, status, and featured filter
+  const filteredProjects = allProjects.filter(project => {
+    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesCategory = selectedCategory ? project.category === selectedCategory : true;
+    const matchesStatus = selectedStatus ? project.status === selectedStatus : true;
+    const matchesFeatured = showFeaturedOnly ? project.featured : true;
+    
+    return matchesSearch && matchesCategory && matchesStatus && matchesFeatured;
+  });
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white pt-20">
+      <div className="container mx-auto px-4 py-12">
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <div className="text-cyan-400 font-mono text-sm mb-2">PROJECTS.MD</div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-mono">DEVELOPMENT_CYCLES</h1>
+          <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+            A collection of projects showcasing my expertise in modern web development, AI integration, and full-stack solutions.
+          </p>
+        </motion.div>
+
+        {/* Search and Filter Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12"
+        >
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Input
+                type="text"
+                placeholder="Search projects by title, description, or technologies..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 bg-slate-800 border-slate-700 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20"
+              />
+            </div>
+          </div>
+
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {/* Featured Toggle */}
+            <Button
+              variant={showFeaturedOnly ? "default" : "outline"}
+              onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
+              className={`font-mono text-sm ${
+                showFeaturedOnly 
+                  ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
+                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+              }`}
+            >
+              <Filter className="w-4 h-4 mr-2" />
+              Featured Only
+            </Button>
+
+            {/* Category Filters */}
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={selectedCategory === null ? "default" : "outline"}
+                onClick={() => setSelectedCategory(null)}
+                className={`font-mono text-sm ${
+                  selectedCategory === null 
+                    ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
+                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                }`}
+              >
+                All Categories
+              </Button>
+              {allCategories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
+                  className={`font-mono text-sm ${
+                    selectedCategory === category 
+                      ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
+                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                  }`}
+                >
+                  {categoryIcons[category as keyof typeof categoryIcons]}
+                  <span className="ml-1">{category}</span>
+                </Button>
+              ))}
+            </div>
+
+            {/* Status Filters */}
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={selectedStatus === null ? "default" : "outline"}
+                onClick={() => setSelectedStatus(null)}
+                className={`font-mono text-sm ${
+                  selectedStatus === null 
+                    ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
+                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                }`}
+              >
+                All Status
+              </Button>
+              {allStatuses.map((status) => (
+                <Button
+                  key={status}
+                  variant={selectedStatus === status ? "default" : "outline"}
+                  onClick={() => setSelectedStatus(selectedStatus === status ? null : status)}
+                  className={`font-mono text-sm ${
+                    selectedStatus === status 
+                      ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
+                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                  }`}
+                >
+                  {status}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* Results Count */}
+          <div className="text-center text-gray-400 font-mono text-sm">
+            {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'} found
+          </div>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8"
+        >
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="group"
+            >
+              <Card className="h-full bg-slate-800 border-slate-700 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer overflow-hidden">
+                {/* Project Image */}
+                <div className="relative h-48 bg-slate-700 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-6xl font-mono text-cyan-400/30">
+                      {project.title.charAt(0)}
+                    </div>
+                  </div>
+                  {project.featured && (
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50 font-mono text-xs">
+                        FEATURED
+                      </Badge>
+                    </div>
+                  )}
+                </div>
+
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      {categoryIcons[project.category as keyof typeof categoryIcons]}
+                      <span className="text-xs font-mono text-cyan-400">{project.category}</span>
+                    </div>
+                    <Badge 
+                      variant="outline" 
+                      className={`font-mono text-xs ${statusColors[project.status as keyof typeof statusColors]}`}
+                    >
+                      {project.status}
+                    </Badge>
+                  </div>
+                  
+                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono text-xl mb-2">
+                    {project.title}
+                  </CardTitle>
+                  
+                  <CardDescription className="text-gray-300 line-clamp-3">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.slice(0, 4).map((tech) => (
+                      <Badge 
+                        key={tech} 
+                        variant="outline" 
+                        className="border-purple-500/50 text-purple-300 bg-purple-500/10 font-mono text-xs"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                    {project.technologies.length > 4 && (
+                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10 font-mono text-xs">
+                        +{project.technologies.length - 4} more
+                      </Badge>
+                    )}
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="space-y-2 text-sm text-gray-400">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span className="font-mono">{project.year}</span>
+                    </div>
+                    {project.duration && (
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4" />
+                        <span className="font-mono">{project.duration}</span>
+                      </div>
+                    )}
+                    {project.client && (
+                      <div className="flex items-center gap-2">
+                        <User className="w-4 h-4" />
+                        <span className="font-mono">{project.client}</span>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+                
+                <CardFooter className="flex items-center justify-between mt-auto">
+                  <div className="flex gap-2">
+                    {project.liveUrl && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono text-xs"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.liveUrl, '_blank');
+                        }}
+                      >
+                        <ExternalLink className="w-3 h-3 mr-1" />
+                        Live
+                      </Button>
+                    )}
+                    {project.githubUrl && (
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="border-gray-500/50 text-gray-400 hover:bg-gray-500/10 font-mono text-xs"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(project.githubUrl, '_blank');
+                        }}
+                      >
+                        <Github className="w-3 h-3 mr-1" />
+                        Code
+                      </Button>
+                    )}
+                  </div>
+                  
+                  <ChevronRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* No Results */}
+        {filteredProjects.length === 0 && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
+            <Code className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+            <h3 className="text-xl font-mono text-gray-400 mb-2">NO_PROJECTS_FOUND</h3>
+            <p className="text-gray-500 font-mono">
+              Try adjusting your search terms or filters
+            </p>
+          </motion.div>
+        )}
+      </div>
+    </div>
+  );
+};

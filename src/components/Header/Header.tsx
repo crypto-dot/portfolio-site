@@ -16,9 +16,9 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const navigationItems : AnchorItemProps[] = [
-    { href: '/home', number: 1, label: 'HOME' },
+    { href: '/', number: 1, label: 'HOME' },
     { href: '/projects', number: 2, label: 'PROJECTS' },
-    { href: '/blog', number: 3, label: 'BLOG' },
+    { href: '/posts', number: 3, label: 'POSTS' },
   ]
 
   return (

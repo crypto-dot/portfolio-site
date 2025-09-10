@@ -19,7 +19,7 @@ export const Hero = () => {
                 </div>
                 
                 <div>
-                  <h1 className="text-5xl lg:text-7xl font-bold mb-4 font-mono">
+                  <h1 className="text-5xl lg:text-7xl font-bold mb-4 font-mono w-fit">
                     <span className="text-cyan-400">Carlos</span>
                     <br />
                     <span className="bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">
