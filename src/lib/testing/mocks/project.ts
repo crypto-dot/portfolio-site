@@ -76,7 +76,7 @@ export const allProjects: Project[] = [
     category: "Frontend",
     featured: false,
     year: 2022,
-    duration: "1 week",
+    duration: "1 day",
     liveUrl: "https://crypto-dot.github.io/FrontendMentorChallenge5/"
   },
   // {
