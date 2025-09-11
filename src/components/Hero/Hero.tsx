@@ -2,7 +2,7 @@ import React from 'react';
 import { Github, Play } from 'lucide-react';
 import { HeroAvatar } from './HeroAvatar/HeroAvatar';
 import { SkillsGrid } from '../SkillsGrid/SkillsGrid';
-import { ColoredAnchorButton } from '../AnchorButtons/ColoredAnchorButton/ColoredAnchorButton';
+import { PrimaryAnchorButton } from '../AnchorButtons/PrimaryAnchorButton/PrimaryAnchorButton';
 import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton';
 import AnimatedText from '../AnimatedText/Index';
 import { AnimatedTypewriter } from '../AnimatedTypewriter/AnimatedTypewriter';
@@ -14,19 +14,19 @@ export const Hero = () => {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div className="space-y-2">
-                  <div className="text-cyan-400 font-mono text-sm">SYSTEM_STATUS: ONLINE</div>
+                  <div className="text-primary  text-sm">SYSTEM_STATUS: ONLINE</div>
                   <AnimatedTypewriter />
                 </div>
                 
                 <div>
-                  <h1 className="text-5xl lg:text-7xl font-bold mb-4 font-mono w-fit">
-                    <span className="text-cyan-400">Carlos</span>
+                  <h1 className="text-5xl lg:text-7xl font-bold mb-4  w-fit">
+                    <span className="text-primary">Carlos</span>
                     <br />
                     <span className="bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">
                       ARBIZU
                     </span>
                   </h1>
-                  <div className=" text-sm md:text-xl text-gray-300 font-mono">
+                  <div className=" text-sm md:text-xl text-gray-300 ">
                     <div className="flex items-center gap-2">
                       <span className="text-green-400">&rarr;</span> 
                       <AnimatedText duration={2} bounce={.75}>
@@ -62,10 +62,10 @@ export const Hero = () => {
                 </AnimatedText>
                 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <ColoredAnchorButton text="CONTACT_ME.exe" link="/contact" >
+                   <PrimaryAnchorButton text="CONTACT ME" link="/contact" >
                     <Play  className="w-4 h-4" />
-                   </ColoredAnchorButton>
-                  <WhiteAnchorButton text="ACCESS_GITHUB" link="https://github.com/crypto-dot" >
+                   </PrimaryAnchorButton>
+                  <WhiteAnchorButton text="ACCESS GITHUB" link="https://github.com/crypto-dot" >
                     <Github className="w-4 h-4" />
                   </WhiteAnchorButton>
                 </div>

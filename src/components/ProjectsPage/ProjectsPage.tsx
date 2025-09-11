@@ -50,7 +50,7 @@ export const ProjectsPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
+    <div className="min-h-screen text-white pt-20">
       <div className="container mx-auto px-4 py-12">
         {/* Header Section */}
         <motion.div 
@@ -59,8 +59,8 @@ export const ProjectsPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="text-cyan-400 font-mono text-sm mb-2">PROJECTS.MD</div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-mono">DEVELOPMENT_CYCLES</h1>
+          <div className="text-primary  text-sm mb-2">PROJECTS.MD</div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">DEVELOPMENT_CYCLES</h1>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             A collection of projects showcasing my expertise in modern web development, AI integration, and full-stack solutions.
           </p>
@@ -92,10 +92,10 @@ export const ProjectsPage = () => {
             <Button
               variant={showFeaturedOnly ? "default" : "outline"}
               onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
-              className={`font-mono text-sm ${
+              className={` text-sm ${
                 showFeaturedOnly 
                   ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
               }`}
             >
               <Filter className="w-4 h-4 mr-2" />
@@ -107,10 +107,10 @@ export const ProjectsPage = () => {
               <Button
                 variant={selectedCategory === null ? "default" : "outline"}
                 onClick={() => setSelectedCategory(null)}
-                className={`font-mono text-sm ${
+                className={` text-sm ${
                   selectedCategory === null 
                     ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
                 }`}
               >
                 All Categories
@@ -120,10 +120,10 @@ export const ProjectsPage = () => {
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
-                  className={`font-mono text-sm ${
+                  className={` text-sm ${
                     selectedCategory === category 
                       ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
                   }`}
                 >
                   {categoryIcons[category as keyof typeof categoryIcons]}
@@ -137,10 +137,10 @@ export const ProjectsPage = () => {
               <Button
                 variant={selectedStatus === null ? "default" : "outline"}
                 onClick={() => setSelectedStatus(null)}
-                className={`font-mono text-sm ${
+                className={` text-sm ${
                   selectedStatus === null 
                     ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
                 }`}
               >
                 All Status
@@ -150,10 +150,10 @@ export const ProjectsPage = () => {
                   key={status}
                   variant={selectedStatus === status ? "default" : "outline"}
                   onClick={() => setSelectedStatus(selectedStatus === status ? null : status)}
-                  className={`font-mono text-sm ${
+                  className={` text-sm ${
                     selectedStatus === status 
                       ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
+                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
                   }`}
                 >
                   {status}
@@ -163,7 +163,7 @@ export const ProjectsPage = () => {
           </div>
 
           {/* Results Count */}
-          <div className="text-center text-gray-400 font-mono text-sm">
+          <div className="text-center text-gray-400  text-sm">
             {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'} found
           </div>
         </motion.div>
@@ -189,13 +189,13 @@ export const ProjectsPage = () => {
                 <div className="relative h-48 bg-slate-700 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl font-mono text-cyan-400/30">
+                    <div className="text-6xl  text-primary/30">
                       {project.title.charAt(0)}
                     </div>
                   </div>
                   {project.featured && (
                     <div className="absolute top-4 right-4">
-                      <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50 font-mono text-xs">
+                      <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50  text-xs">
                         FEATURED
                       </Badge>
                     </div>
@@ -206,17 +206,17 @@ export const ProjectsPage = () => {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       {categoryIcons[project.category as keyof typeof categoryIcons]}
-                      <span className="text-xs font-mono text-cyan-400">{project.category}</span>
+                      <span className="text-xs  text-primary">{project.category}</span>
                     </div>
                     <Badge 
                       variant="outline" 
-                      className={`font-mono text-xs ${statusColors[project.status as keyof typeof statusColors]}`}
+                      className={` text-xs ${statusColors[project.status as keyof typeof statusColors]}`}
                     >
                       {project.status}
                     </Badge>
                   </div>
                   
-                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono text-xl mb-2">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-2">
                     {project.title}
                   </CardTitle>
                   
@@ -231,13 +231,13 @@ export const ProjectsPage = () => {
                       <Badge 
                         key={tech} 
                         variant="outline" 
-                        className="border-purple-500/50 text-purple-300 bg-purple-500/10 font-mono text-xs"
+                        className="border-primary text-purple-300 bg-purple-500/10  text-xs"
                       >
                         {tech}
                       </Badge>
                     ))}
                     {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10 font-mono text-xs">
+                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10  text-xs">
                         +{project.technologies.length - 4} more
                       </Badge>
                     )}
@@ -247,18 +247,18 @@ export const ProjectsPage = () => {
                   <div className="space-y-2 text-sm text-gray-400">
                     <div className="flex items-center gap-2">
                       <Calendar className="w-4 h-4" />
-                      <span className="font-mono">{project.year}</span>
+                      <span className="">{project.year}</span>
                     </div>
                     {project.duration && (
                       <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
-                        <span className="font-mono">{project.duration}</span>
+                        <span className="">{project.duration}</span>
                       </div>
                     )}
                     {project.client && (
                       <div className="flex items-center gap-2">
                         <User className="w-4 h-4" />
-                        <span className="font-mono">{project.client}</span>
+                        <span className="">{project.client}</span>
                       </div>
                     )}
                   </div>
@@ -270,7 +270,7 @@ export const ProjectsPage = () => {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-mono text-xs"
+                        className="border-primary text-primary hover:bg-cyan-500/10  text-xs"
                         onClick={(e) => {
                           e.stopPropagation();
                           window.open(project.liveUrl, '_blank');
@@ -284,7 +284,7 @@ export const ProjectsPage = () => {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-gray-500/50 text-gray-400 hover:bg-gray-500/10 font-mono text-xs"
+                        className="border-gray-500/50 text-gray-400 hover:bg-gray-500/10  text-xs"
                         onClick={(e) => {
                           e.stopPropagation();
                           window.open(project.githubUrl, '_blank');
@@ -296,7 +296,7 @@ export const ProjectsPage = () => {
                     )}
                   </div>
                   
-                  <ChevronRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
                 </CardFooter>
               </Card>
             </motion.div>
@@ -311,8 +311,8 @@ export const ProjectsPage = () => {
             className="text-center py-12"
           >
             <Code className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-mono text-gray-400 mb-2">NO_PROJECTS_FOUND</h3>
-            <p className="text-gray-500 font-mono">
+            <h3 className="text-xl  text-gray-400 mb-2">NO_PROJECTS_FOUND</h3>
+            <p className="text-gray-500 ">
               Try adjusting your search terms or filters
             </p>
           </motion.div>
