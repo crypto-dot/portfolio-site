@@ -12,16 +12,15 @@ export const BlogList = () => {
           <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }} id="blog" className="relative py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="text-primary  text-sm mb-2">KNOWLEDGE_BASE.MD</div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 ">RECENT_LOGS</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold  text-secondary mb-4 ">RECENT LOGS</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Technical insights and development methodologies
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8 mx-auto">
-            {blogPosts.map((post, index) => (
-              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} key={post.id}>
+            {blogPosts.slice(0, 4).map((post, index) => (
+              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: .75 }} viewport={{ once: true }} key={post.id}>
               <Card key={post.id} className="transition-all duration-300 cursor-pointer h-[100%]">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
@@ -34,7 +33,7 @@ export const BlogList = () => {
                   <CardTitle className="group-hover:text-primary transition-colors  text-xl">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-300 line-clamp-2">
+                  <CardDescription className="text-muted-foreground line-clamp-2">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>

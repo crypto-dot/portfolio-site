@@ -8,6 +8,7 @@ import { ChevronRight, Search, ExternalLink, Github, Calendar, Clock, User, Filt
 import { allProjects } from '../../lib/testing/mocks/project';
 import { motion } from 'motion/react';
 import { Project } from '../../lib/types/project';
+import { FilterButton } from '../FilterButton/FilterButton';
 
 const categoryIcons = {
   'Web Development': <Monitor className="w-4 h-4" />,
@@ -61,7 +62,7 @@ export const ProjectsPage = () => {
         >
           <div className="text-primary  text-sm mb-2">PROJECTS.MD</div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 ">DEVELOPMENT_CYCLES</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             A collection of projects showcasing my expertise in modern web development, AI integration, and full-stack solutions.
           </p>
         </motion.div>
@@ -89,75 +90,43 @@ export const ProjectsPage = () => {
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {/* Featured Toggle */}
-            <Button
-              variant={showFeaturedOnly ? "default" : "outline"}
-              onClick={() => setShowFeaturedOnly(!showFeaturedOnly)}
-              className={` text-sm ${
-                showFeaturedOnly 
-                  ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
-              }`}
-            >
-              <Filter className="w-4 h-4 mr-2" />
-              Featured Only
-            </Button>
+            <FilterButton
+              tag="Featured Only"
+              selectedTag={showFeaturedOnly ? "Featured Only" : null}
+              setSelectedTag={() => setShowFeaturedOnly(!showFeaturedOnly)}
+            />
 
             {/* Category Filters */}
             <div className="flex flex-wrap gap-2">
-              <Button
-                variant={selectedCategory === null ? "default" : "outline"}
-                onClick={() => setSelectedCategory(null)}
-                className={` text-sm ${
-                  selectedCategory === null 
-                    ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
-                }`}
-              >
-                All Categories
-              </Button>
+              <FilterButton
+                tag="All Categories"
+                selectedTag={selectedCategory}
+                setSelectedTag={() => setSelectedCategory(null)}
+              />
               {allCategories.map((category) => (
-                <Button
+                <FilterButton
                   key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}
-                  className={` text-sm ${
-                    selectedCategory === category 
-                      ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
-                  }`}
-                >
-                  {categoryIcons[category as keyof typeof categoryIcons]}
-                  <span className="ml-1">{category}</span>
-                </Button>
+                  tag={category}
+                  selectedTag={selectedCategory}
+                  setSelectedTag={() => setSelectedCategory(selectedCategory === category ? null : category)}
+                />
               ))}
             </div>
 
             {/* Status Filters */}
             <div className="flex flex-wrap gap-2">
-              <Button
-                variant={selectedStatus === null ? "default" : "outline"}
-                onClick={() => setSelectedStatus(null)}
-                className={` text-sm ${
-                  selectedStatus === null 
-                    ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
-                }`}
-              >
-                All Status
-              </Button>
+              <FilterButton
+                tag="All Status"
+                selectedTag={selectedStatus}
+                setSelectedTag={() => setSelectedStatus(null)}
+              />
               {allStatuses.map((status) => (
-                <Button
+                <FilterButton
                   key={status}
-                  variant={selectedStatus === status ? "default" : "outline"}
-                  onClick={() => setSelectedStatus(selectedStatus === status ? null : status)}
-                  className={` text-sm ${
-                    selectedStatus === status 
-                      ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                      : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-primary"
-                  }`}
-                >
-                  {status}
-                </Button>
+                  tag={status}
+                    selectedTag={selectedStatus}
+                  setSelectedTag={() => setSelectedStatus(selectedStatus === status ? null : status)}
+                />
               ))}
             </div>
           </div>
@@ -184,7 +153,7 @@ export const ProjectsPage = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Card className="h-full bg-slate-800 border-slate-700 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="h-full  transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* Project Image */}
                 <div className="relative h-48 bg-slate-700 overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20" />
@@ -220,7 +189,7 @@ export const ProjectsPage = () => {
                     {project.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-gray-300 line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
@@ -228,18 +197,18 @@ export const ProjectsPage = () => {
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 4).map((tech) => (
-                      <Badge 
-                        key={tech} 
-                        variant="outline" 
-                        className="border-primary text-purple-300 bg-purple-500/10  text-xs"
-                      >
-                        {tech}
-                      </Badge>
+                          <Badge 
+                          key={tech} 
+                          variant="outline" 
+                          className="bg-primary text-primary-foreground   text-xs"
+                        >
+                          {tech}
+                        </Badge>
                     ))}
                     {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10  text-xs">
-                        +{project.technologies.length - 4} more
-                      </Badge>
+                        <Badge variant="outline" className="bg-secondary text-secondary-foreground  text-xs">
+                          +{project.technologies.length - 4} more
+                        </Badge>
                     )}
                   </div>
 

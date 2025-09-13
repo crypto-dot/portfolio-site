@@ -5,7 +5,7 @@ import { numberLabel } from '../Styles/styles';
 import { item } from '../Styles/styles';
 import { text } from '../Styles/styles';
 import { AnchorItemProps } from '../AnimatedTextReveal.types';
-
+import Link from 'next/link';
 export const AnchorItem = ({ label, number, href }: AnchorItemProps) => {
     const [isHovered, setIsHovered] = useState(false)
 
@@ -17,9 +17,8 @@ export const AnchorItem = ({ label, number, href }: AnchorItemProps) => {
     )
 
     return (
-
-        <motion.a
-            href={href}
+        <Link href={href}>
+        <motion.div
             style={{
                 ...item,
                 justifyContent: isHovered ? "flex-end" : "flex-start",
@@ -33,8 +32,8 @@ export const AnchorItem = ({ label, number, href }: AnchorItemProps) => {
             <motion.span layout style={text} aria-hidden>
                 {content}
             </motion.span>
-        </motion.a>
-    
+        </motion.div>
+    </Link>
     )
 }
 

@@ -32,10 +32,10 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                         <Terminal className="w-4 h-4 text-primary" />
                         <span className="text-xs  text-primary">PROJECT_{String(index + 1).padStart(3, '0')}</span>
                     </div>
-                    <CardTitle className="text-xl">
+                    <CardTitle className="text-xl mb-4 group-hover:text-primary transition-colors">
                         {project.title}
                     </CardTitle>
-                    <CardDescription className="text-gray-300">
+                    <CardDescription className="text-muted-foreground mb-2">
                         {project.description}
                     </CardDescription>
                 </CardHeader>

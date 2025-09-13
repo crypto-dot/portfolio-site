@@ -9,6 +9,7 @@ import { ChevronRight, Calendar, Terminal, Search, Clock, User } from 'lucide-re
 import { blogPosts } from '../../lib/testing/mocks/blog/blog';
 import { motion } from 'motion/react';
 import { BlogPost } from '../../lib/types/blog';
+import { FilterButton } from '../FilterButton/FilterButton';
 
 export const PostsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -39,7 +40,7 @@ export const PostsPage = () => {
           className="text-center mb-12"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-4 ">TECHNICAL LOGS</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             A collection of technical insights, development methodologies, and knowledge sharing from my journey as a developer.
           </p>
         </motion.div>
@@ -66,30 +67,18 @@ export const PostsPage = () => {
 
           {/* Tag Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <Button
-              variant={selectedTag === null ? "default" : "outline"}
-              onClick={() => setSelectedTag(null)}
-              className={` text-sm ${
-                selectedTag === null 
-                    ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
-                    : "text-secondary"
-              }`}
-            >
-              All Posts
-            </Button>
+            <FilterButton
+              tag="All Posts"
+              selectedTag={selectedTag}
+              setSelectedTag={() => setSelectedTag(null)}
+            />
+
             {allTags.map((tag) => (
-              <Button
-                key={tag}
-                variant={selectedTag === tag ? "default" : "outline"}
-                onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                className={` text-sm ${
-                  selectedTag === tag 
-                    ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
-                    : "text-secondary"
-                }`}
-              >
-                {tag}
-              </Button>
+            <FilterButton
+                tag={tag}
+                selectedTag={selectedTag}
+                setSelectedTag={() => setSelectedTag(selectedTag === tag ? null : tag)}
+              />
             ))}
           </div>
 
@@ -115,7 +104,7 @@ export const PostsPage = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Card className="h-full bg-slate-800 border-slate-700 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer">
+              <Card className="h-full  transition-all duration-300 cursor-pointer">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -132,7 +121,7 @@ export const PostsPage = () => {
                     {post.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-gray-300 line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
@@ -143,13 +132,13 @@ export const PostsPage = () => {
                       <Badge 
                         key={tag} 
                         variant="outline" 
-                        className="border-primary text-purple-300 bg-purple-500/10  text-xs"
+                        className="bg-primary text-primary-foreground   text-xs"
                       >
                         {tag}
                       </Badge>
                     ))}
                     {post.tags.length > 3 && (
-                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10  text-xs">
+                      <Badge variant="outline" className=" text-xs bg-secondary text-secondary-foreground">
                         +{post.tags.length - 3} more
                       </Badge>
                     )}

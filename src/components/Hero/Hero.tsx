@@ -22,11 +22,11 @@ export const Hero = () => {
                   <h1 className="text-5xl lg:text-7xl font-bold mb-4  w-fit">
                     <span className="text-primary">Carlos</span>
                     <br />
-                    <span className="bg-gradient-to-r from-cyan-500 to-purple-600 bg-clip-text text-transparent">
+                    <span className="text-secondary">
                       ARBIZU
                     </span>
                   </h1>
-                  <div className=" text-sm md:text-xl text-gray-300 ">
+                  <div className=" text-sm md:text-xl text-secondary ">
                     <div className="flex items-center gap-2">
                       <span className="text-green-400">&rarr;</span> 
                       <AnimatedText duration={2} bounce={.75}>
@@ -55,7 +55,7 @@ export const Hero = () => {
                 </div>
                 
                 <AnimatedText>
-                  <p className="text-lg text-gray-300 max-w-lg animated-text">
+                  <p className="text-lg text-secondary max-w-lg animated-text">
                   Architecting the future of web technology through cutting-edge development, 
                   blockchain innovation, and artificial intelligence integration.
                   </p>
