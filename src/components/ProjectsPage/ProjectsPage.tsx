@@ -60,8 +60,7 @@ export const ProjectsPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="text-primary  text-sm mb-2">PROJECTS.MD</div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">DEVELOPMENT_CYCLES</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">DEVELOPMENT CYCLES</h1>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             A collection of projects showcasing my expertise in modern web development, AI integration, and full-stack solutions.
           </p>

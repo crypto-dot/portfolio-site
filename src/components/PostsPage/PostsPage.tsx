@@ -75,6 +75,7 @@ export const PostsPage = () => {
 
             {allTags.map((tag) => (
             <FilterButton
+               key={tag}
                 tag={tag}
                 selectedTag={selectedTag}
                 setSelectedTag={() => setSelectedTag(selectedTag === tag ? null : tag)}
