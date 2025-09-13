@@ -18,6 +18,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Carlos Arbizu | Developer",
   description: "Full stack developer creating AI-powered web applications that solve real business problems. See my portfolio of machine learning and software development projects.",
+  openGraph: {
+    title: "Carlos Arbizu | Developer",
+    description: "Full stack developer creating AI-powered web applications that solve real business problems. See my portfolio of machine learning and software development projects.",
+    type: "website",
+    siteName: "Carlos Arbizu | Developer",
+    locale: 'en_US'
+  },
 };
 
 export default function RootLayout({

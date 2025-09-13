@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     title: "Projects | Carlos Arbizu",
     description: "Explore my portfolio of web development projects, featuring full-stack applications, AI-powered solutions, and modern web technologies.",
     type: "website",
+    siteName: "Carlos Arbizu | Developer",
+    locale: 'en_US'
   },
 };
 

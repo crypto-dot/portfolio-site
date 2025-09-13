@@ -38,18 +38,11 @@ const Home = () => {
   }, []);
   return (
     <ReactLenis root ref={lenisRef}  options={{ autoRaf: false }}>
-      {/* Header */}
       <Header />
       <Banner />
-      {/* Hero Section */}
       <Hero />
-      {/* Projects Section */}
       <Projects />
-
-      {/* Blog Section */}
       <BlogList />
-
-      {/* Footer */}
     </ReactLenis>
   );
 };
