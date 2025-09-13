@@ -12,29 +12,28 @@ export const BlogList = () => {
           <motion.section initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 1 }} viewport={{ once: true }} id="blog" className="relative py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <div className="text-cyan-400 font-mono text-sm mb-2">KNOWLEDGE_BASE.MD</div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-4 font-mono">RECENT_LOGS</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold  text-secondary mb-4 ">RECENT LOGS</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Technical insights and development methodologies
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-8 mx-auto">
-            {blogPosts.map((post, index) => (
-              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: 1 }} viewport={{ once: true }} key={post.id}>
-              <Card key={post.id} className=" transition-all duration-300 cursor-pointer h-[100%]">
+            {blogPosts.slice(0, 4).map((post, index) => (
+              <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: .75 }} viewport={{ once: true }} key={post.id}>
+              <Card key={post.id} className="transition-all duration-300 cursor-pointer h-[100%]">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <Terminal className="w-4 h-4 text-cyan-400" />
-                      <span className="text-xs font-mono text-cyan-400">LOG_ENTRY</span>
+                      <Terminal className="w-4 h-4 text-primary" />
+                      <span className="text-xs  text-primary">LOG_ENTRY</span>
                     </div>
-                    <span className="text-xs font-mono text-gray-400">{post.readTime} READ</span>
+                    <span className="text-xs  text-gray-400">{post.readTime} READ</span>
                   </div>
-                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono text-xl">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-300 line-clamp-2">
+                  <CardDescription className="text-muted-foreground line-clamp-2">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
@@ -42,8 +41,8 @@ export const BlogList = () => {
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="border-purple-500/50 text-purple-300 bg-purple-500/10 font-mono text-xs">
-                        #{tag}
+                      <Badge key={tag} variant="outline" className="bg-primary text-primary-foreground text-xs">
+                        {tag}
                       </Badge>
                     ))}
                   </div>
@@ -51,20 +50,20 @@ export const BlogList = () => {
                 
                 <CardFooter className="flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-3">
-                    <Avatar className="w-8 h-8 border border-cyan-500/50">
+                    <Avatar className="w-8 h-8">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />
-                      <AvatarFallback className="bg-cyan-500/20 text-cyan-400 text-xs">AC</AvatarFallback>
+                      <AvatarFallback className="bg-primary text-primary-foreground text-xs">CA</AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="font-mono text-sm text-cyan-400">{post.author}</div>
-                      <div className="flex items-center gap-1 text-xs text-gray-400 font-mono">
+                      <div className="text-sm">{post.author}</div>
+                      <div className="flex items-center gap-1 text-xs text-gray-400 ">
                         <Calendar className="w-3 h-3" />
                         {post.publishedAt}
                       </div>
                     </div>
                   </div>
                   
-                  <ChevronRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
                 </CardFooter>
               </Card>
               </motion.div>

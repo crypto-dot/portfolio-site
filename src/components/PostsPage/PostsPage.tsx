@@ -9,6 +9,7 @@ import { ChevronRight, Calendar, Terminal, Search, Clock, User } from 'lucide-re
 import { blogPosts } from '../../lib/testing/mocks/blog/blog';
 import { motion } from 'motion/react';
 import { BlogPost } from '../../lib/types/blog';
+import { FilterButton } from '../FilterButton/FilterButton';
 
 export const PostsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,7 +30,7 @@ export const PostsPage = () => {
   });
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-20">
+    <div className="min-h-screen text-white pt-20">
       <div className="container mx-auto px-4 py-12">
         {/* Header Section */}
         <motion.div 
@@ -38,9 +39,8 @@ export const PostsPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="text-cyan-400 font-mono text-sm mb-2">KNOWLEDGE_BASE.MD</div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 font-mono">TECHNICAL_LOGS</h1>
-          <p className="text-gray-300 max-w-3xl mx-auto text-lg">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">TECHNICAL LOGS</h1>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             A collection of technical insights, development methodologies, and knowledge sharing from my journey as a developer.
           </p>
         </motion.div>
@@ -67,35 +67,24 @@ export const PostsPage = () => {
 
           {/* Tag Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <Button
-              variant={selectedTag === null ? "default" : "outline"}
-              onClick={() => setSelectedTag(null)}
-              className={`font-mono text-sm ${
-                selectedTag === null 
-                  ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
-              }`}
-            >
-              All Posts
-            </Button>
+            <FilterButton
+              tag="All Posts"
+              selectedTag={selectedTag}
+              setSelectedTag={() => setSelectedTag(null)}
+            />
+
             {allTags.map((tag) => (
-              <Button
-                key={tag}
-                variant={selectedTag === tag ? "default" : "outline"}
-                onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                className={`font-mono text-sm ${
-                  selectedTag === tag 
-                    ? "bg-cyan-500 hover:bg-cyan-600 text-white" 
-                    : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:text-cyan-400"
-                }`}
-              >
-                #{tag}
-              </Button>
+            <FilterButton
+               key={tag}
+                tag={tag}
+                selectedTag={selectedTag}
+                setSelectedTag={() => setSelectedTag(selectedTag === tag ? null : tag)}
+              />
             ))}
           </div>
 
           {/* Results Count */}
-          <div className="text-center text-gray-400 font-mono text-sm">
+          <div className="text-center text-gray-400  text-sm">
             {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'} found
           </div>
         </motion.div>
@@ -116,24 +105,24 @@ export const PostsPage = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Card className="h-full bg-slate-800 border-slate-700 hover:border-cyan-400/50 transition-all duration-300 cursor-pointer">
+              <Card className="h-full  transition-all duration-300 cursor-pointer">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <Terminal className="w-4 h-4 text-cyan-400" />
-                      <span className="text-xs font-mono text-cyan-400">LOG_ENTRY</span>
+                      <Terminal className="w-4 h-4 text-primary" />
+                      <span className="text-xs  text-primary">LOG_ENTRY</span>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-gray-400 font-mono">
+                    <div className="flex items-center gap-1 text-xs text-gray-400 ">
                       <Clock className="w-3 h-3" />
                       {post.readTime}
                     </div>
                   </div>
                   
-                  <CardTitle className="group-hover:text-cyan-400 transition-colors font-mono text-xl mb-2">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-2">
                     {post.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-gray-300 line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
@@ -144,13 +133,13 @@ export const PostsPage = () => {
                       <Badge 
                         key={tag} 
                         variant="outline" 
-                        className="border-purple-500/50 text-purple-300 bg-purple-500/10 font-mono text-xs"
+                        className="bg-primary text-primary-foreground   text-xs"
                       >
-                        #{tag}
+                        {tag}
                       </Badge>
                     ))}
                     {post.tags.length > 3 && (
-                      <Badge variant="outline" className="border-gray-500/50 text-gray-400 bg-gray-500/10 font-mono text-xs">
+                      <Badge variant="outline" className=" text-xs bg-secondary text-secondary-foreground">
                         +{post.tags.length - 3} more
                       </Badge>
                     )}
@@ -159,15 +148,15 @@ export const PostsPage = () => {
                 
                 <CardFooter className="flex items-center justify-between mt-auto">
                   <div className="flex items-center gap-3">
-                    <Avatar className="w-8 h-8 border border-cyan-500/50">
+                    <Avatar className="w-8 h-8 border border-primary">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />
-                      <AvatarFallback className="bg-cyan-500/20 text-cyan-400 text-xs">
+                      <AvatarFallback className="bg-secondary text-primary text-xs">
                         {post.author.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="font-mono text-sm text-cyan-400">{post.author}</div>
-                      <div className="flex items-center gap-1 text-xs text-gray-400 font-mono">
+                      <div className="text-sm">{post.author}</div>
+                      <div className="flex items-center gap-1 text-xs text-gray-400 ">
                         <Calendar className="w-3 h-3" />
                         {new Date(post.publishedAt).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -178,7 +167,7 @@ export const PostsPage = () => {
                     </div>
                   </div>
                   
-                  <ChevronRight className="w-5 h-5 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
                 </CardFooter>
               </Card>
             </motion.div>
@@ -193,8 +182,8 @@ export const PostsPage = () => {
             className="text-center py-12"
           >
             <Terminal className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <h3 className="text-xl font-mono text-gray-400 mb-2">NO_LOGS_FOUND</h3>
-            <p className="text-gray-500 font-mono">
+            <h3 className="text-xl  text-gray-400 mb-2">NO_LOGS_FOUND</h3>
+            <p className="text-gray-500 ">
               Try adjusting your search terms or filters
             </p>
           </motion.div>

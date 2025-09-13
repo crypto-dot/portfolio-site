@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useRef, useEffect } from 'react'
-import { ColoredAnchorButton } from '../AnchorButtons/ColoredAnchorButton/ColoredAnchorButton'
+import { PrimaryAnchorButton } from '../AnchorButtons/PrimaryAnchorButton/PrimaryAnchorButton'
 import { Terminal, Menu, X, Home, Code, FileText } from 'lucide-react'
 import { TextRevealListItems } from '../AnimatedTextReveal/AnimatedTextReveal'
 import { AnchorItemProps } from '../AnimatedTextReveal/AnimatedTextReveal.types'
@@ -71,7 +71,7 @@ export const Header = () => {
           <div className="lg:hidden relative" ref={dropdownRef}>
             {/* Mobile Menu Button */}
             <motion.button
-              className="p-2 text-cyan-400 hover:text-cyan-300 transition-colors rounded-lg hover:bg-cyan-400/10"
+              className="p-2 transition-colors rounded-lg hover:bg-primary/10"
               aria-label="Toggle navigation menu"
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.95 }}
@@ -103,18 +103,18 @@ export const Header = () => {
                     stiffness: 300,
                     damping: 30
                   }}
-                  className="absolute left-[-109px] top-full mt-2 w-64 bg-slate-800/95 backdrop-blur-md border border-slate-700/50 rounded-xl shadow-2xl overflow-hidden z-50"
+                  className="absolute left-[-109px] top-full mt-2 w-64 bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden z-50"
                 >
                   {/* Dropdown Header */}
                   <motion.div 
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.3 }}
-                    className="px-4 py-3 border-b border-slate-700/50 bg-slate-800/50"
+                    className="px-4 py-3 bg-secondary/50"
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <Terminal className="w-4 h-4 text-cyan-400" />
-                      <span className="text-sm font-mono text-cyan-400">NAVIGATION</span>
+                      <Terminal className="w-4 h-4 text-primary" />
+                      <span className="text-sm  text-primary">NAVIGATION</span>
                     </div>
                     
 
@@ -149,7 +149,7 @@ export const Header = () => {
                         >
                           <Link
                             href={item.href}
-                            className="flex items-center gap-2 px-3 py-2 text-xs font-mono transition-all duration-300 cursor-pointer"
+                            className="flex items-center gap-2 px-3 py-2 text-xs  transition-all duration-300 cursor-pointer"
                             onClick={() => setIsOpen(false)}
                           >
                             {navigationIcons[item.label as keyof typeof navigationIcons]} {item.label}
@@ -167,7 +167,7 @@ export const Header = () => {
                     transition={{ delay: 0.4, duration: 0.3 }}
                     className="px-4 py-3 border-t border-slate-700/50 bg-slate-800/30"
                   >
-                    <div className="text-xs font-mono text-gray-500 text-center">
+                    <div className="text-xs  text-gray-500 text-center">
                       Press ESC to close
                     </div>
                   </motion.div>
