@@ -21,7 +21,7 @@ const categoryIcons = {
 };
 
 const statusColors = {
-  'Live': 'bg-[#285d39] text-green-400 border-green-500/50',
+  'Live': 'bg-[#10391e] text-green-400 border-green-500/50',
   'In Development': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50',
   'Completed': 'bg-blue-500/20 text-blue-400 border-blue-500/50',
   'Archived': 'bg-gray-500/20 text-gray-400 border-gray-500/50'

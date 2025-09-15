@@ -20,7 +20,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                     />
                     <div className="absolute inset-0" />
                     <div className="absolute top-4 right-4">
-                        <Badge className={`${project.status === 'Live' ? 'bg-[#285d39] text-green-400 border-green-500/50' : 'bg-[#574000] text-orange-400 border-orange-500/50'}`}>
+                        <Badge className={`${project.status === 'Live' ? 'bg-[#10391e] text-green-400 border-green-500/50' : 'bg-[#574000] text-orange-400 border-orange-500/50'}`}>
                             {project.status}
                         </Badge>
                     </div>
