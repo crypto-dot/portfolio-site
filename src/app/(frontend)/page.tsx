@@ -1,59 +1,50 @@
-import { headers as getHeaders } from 'next/headers.js'
-import Image from 'next/image'
-import { getPayload } from 'payload'
-import React from 'react'
-import { fileURLToPath } from 'url'
+"use client"
+import React, {useRef, useEffect} from 'react';
+import { Button } from '@/components/shadcn-ui/button';
+import { 
+  Github, 
+  ExternalLink, 
+  Terminal,
+} from 'lucide-react';
+import Projects from '@/components/Projects/Index';
+import Hero from '@/components/Hero/Index';
+import BlogList from '@/components/BlogList/Index';
+import Header from '@/components/Header/Index';
+import { Banner } from '@/components/Banner/Banner';
+import { ReactLenis } from 'lenis/react';
+import type { LenisRef } from 'lenis/react';
+import { cancelFrame, frame } from 'framer-motion';
 
-import config from '@/payload.config'
-import './styles.css'
+const Home = () => {
+  const yearContainer = useRef<HTMLDivElement>(null);
+  const year = new Date().getFullYear();
+  const lenisRef = useRef<LenisRef>(null)
 
-export default async function HomePage() {
-  const headers = await getHeaders()
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
+  useEffect(() => {
+    function update(data: { timestamp: number }) {
+      const time = data.timestamp
+      lenisRef.current?.lenis?.raf(time)
+    }
 
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+    frame.update(update, true)
 
+    return () => cancelFrame(update)
+  }, [])
+
+  useEffect(() => {
+    if (yearContainer.current) {
+      yearContainer.current.innerHTML = year.toString();
+    }
+  }, []);
   return (
-    <div className="home">
-      <div className="content">
-        <picture>
-          <source srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-favicon.svg" />
-          <Image
-            alt="Payload Logo"
-            height={65}
-            src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-favicon.svg"
-            width={65}
-          />
-        </picture>
-        {!user && <h1>Welcome to your new project.</h1>}
-        {user && <h1>Welcome back, {user.email}</h1>}
-        <div className="links">
-          <a
-            className="admin"
-            href={payloadConfig.routes.admin}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Go to admin panel
-          </a>
-          <a
-            className="docs"
-            href="https://payloadcms.com/docs"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Documentation
-          </a>
-        </div>
-      </div>
-      <div className="footer">
-        <p>Update this page by editing</p>
-        <a className="codeLink" href={fileURL}>
-          <code>app/(frontend)/page.tsx</code>
-        </a>
-      </div>
-    </div>
-  )
-}
+    <ReactLenis root ref={lenisRef}  options={{ autoRaf: false }}>
+      <Header />
+      <Banner />
+      <Hero />
+      <Projects />
+      <BlogList />
+    </ReactLenis>
+  );
+};
+
+export default Home;
