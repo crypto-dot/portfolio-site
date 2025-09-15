@@ -21,7 +21,7 @@ const categoryIcons = {
 };
 
 const statusColors = {
-  'Live': 'bg-green-500/20 text-green-400 border-green-500/50',
+  'Live': 'bg-[#285d39] text-green-400 border-green-500/50',
   'In Development': 'bg-yellow-500/20 text-yellow-400 border-yellow-500/50',
   'Completed': 'bg-blue-500/20 text-blue-400 border-blue-500/50',
   'Archived': 'bg-gray-500/20 text-gray-400 border-gray-500/50'
@@ -154,7 +154,7 @@ export const ProjectsPage = () => {
             >
               <Card className="h-full  transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-secondary">
+                <div className="relative h-48 overflow-hidden bg-primary">
                   <div className="absolute inset-0" />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-6xl  text-secondary-foreground">
@@ -163,7 +163,7 @@ export const ProjectsPage = () => {
                   </div>
                   {project.featured && (
                     <div className="absolute top-4 right-4">
-                      <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/50  text-xs">
+                      <Badge className="bg-secondary-foreground text-secondary  text-xs">
                         FEATURED
                       </Badge>
                     </div>
