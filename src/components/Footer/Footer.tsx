@@ -20,7 +20,7 @@ export const Footer = () => {
     <div className="container mx-auto px-4 pt-12">
       <div className="grid md:grid-cols-3 gap-8">
         <div className="flex md:mx-0 mx-auto">
-          <p className="mt-auto text-muted-foreground  text-sm">
+          <p className="mt-auto text-muted-foreground place-items-center text-sm">
             Building the future, one commit at a time.
           </p>
         </div>
