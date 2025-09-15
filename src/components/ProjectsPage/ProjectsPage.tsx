@@ -7,7 +7,6 @@ import { Input } from '../shadcn-ui/input';
 import { ChevronRight, Search, ExternalLink, Github, Calendar, Clock, User, Filter, Code, Smartphone, Monitor, Server } from 'lucide-react';
 import { allProjects } from '../../lib/testing/mocks/project';
 import { motion } from 'motion/react';
-import { Project } from '../../lib/types/project';
 import { FilterButton } from '../FilterButton/FilterButton';
 
 const categoryIcons = {
@@ -154,16 +153,16 @@ export const ProjectsPage = () => {
             >
               <Card className="h-full  transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* Project Image */}
-                <div className="relative h-48 overflow-hidden bg-primary">
+                <div className="relative h-48 overflow-hidden bg-secondary-foreground">
                   <div className="absolute inset-0" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl  text-secondary-foreground">
+                    <div className="text-6xl group-hover:text-primary transition-colors text-secondary">
                       {project.title.charAt(0)}
                     </div>
                   </div>
                   {project.featured && (
                     <div className="absolute top-4 right-4">
-                      <Badge className="bg-secondary-foreground text-secondary  text-xs">
+                      <Badge className="bg-secondary text-secondary-foreground  text-xs">
                         FEATURED
                       </Badge>
                     </div>
