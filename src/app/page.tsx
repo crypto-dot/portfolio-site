@@ -37,6 +37,7 @@ const Home = () => {
     }
   }, []);
   return (
+    <main>
     <ReactLenis root ref={lenisRef}  options={{ autoRaf: false }}>
       <Header />
       <Banner />
@@ -44,6 +45,7 @@ const Home = () => {
       <Projects />
       <BlogList />
     </ReactLenis>
+    </main>
   );
 };
 

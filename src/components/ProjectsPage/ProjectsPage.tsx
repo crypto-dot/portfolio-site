@@ -73,7 +73,7 @@ export const ProjectsPage = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-12"
         >
-          <div className="max-w-2xl mx-auto mb-8">
+          <div className="max-w-2xl mx-auto mb-8 md:mb-16">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
@@ -81,7 +81,7 @@ export const ProjectsPage = () => {
                 placeholder="Search projects by title, description, or technologies..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-slate-800 border-slate-700 text-white placeholder-gray-400 focus:border-cyan-400 focus:ring-cyan-400/20"
+                className="pl-10 text-secondary placeholder-secondary-foreground"
               />
             </div>
           </div>

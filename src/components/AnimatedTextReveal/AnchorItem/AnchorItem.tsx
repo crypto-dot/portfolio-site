@@ -19,6 +19,7 @@ export const AnchorItem = ({ label, number, href }: AnchorItemProps) => {
     )
 
     return (
+        <li>
         <Link href={href}>
         <motion.div
             style={{
@@ -36,6 +37,7 @@ export const AnchorItem = ({ label, number, href }: AnchorItemProps) => {
             </motion.span>
         </motion.div>
     </Link>
+    </li>
     )
 }
 

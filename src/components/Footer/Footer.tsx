@@ -19,7 +19,7 @@ export const Footer = () => {
     <footer className="py-12">
     <div className="container mx-auto px-4 pt-12">
       <div className="grid md:grid-cols-3 gap-8">
-        <div className="flex mx-auto">
+        <div className="flex md:mx-0 mx-auto">
           <p className="mt-auto text-muted-foreground  text-sm">
             Building the future, one commit at a time.
           </p>
@@ -49,7 +49,9 @@ export const Footer = () => {
               </Link>
             </Button>
             <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-primary hover:bg-cyan-500/10 p-2">
+            <Link href="https://github.com/crypto-dot">
               <ExternalLink className="w-5 h-5" />
+              </Link>
             </Button>
           </div>
         </div>

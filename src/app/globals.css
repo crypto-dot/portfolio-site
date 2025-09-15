@@ -129,3 +129,8 @@ a:hover, button:hover {
 .cursor {
   background-color: white;
 }
+
+input[type="text"] {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}

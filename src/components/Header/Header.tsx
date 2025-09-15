@@ -119,7 +119,7 @@ export const Header = () => {
 
                   </motion.div>
 
-                  <div className="py-2">
+                  <div className="py-4">
                     <div className="flex gap-2 flex-col">
                       {navigationItems.map((item, index) => (
                         <motion.div

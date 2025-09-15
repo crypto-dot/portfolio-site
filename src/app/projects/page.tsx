@@ -5,10 +5,10 @@ import { ProjectsPage } from '@/components/ProjectsPage/ProjectsPage';
 
 const Projects = () => {
   return (
-    <>
+    <main>
       <Header />
       <ProjectsPage />
-    </>
+    </main>
   );
 };
 

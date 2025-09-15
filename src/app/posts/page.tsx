@@ -5,10 +5,10 @@ import { PostsPage } from '@/components/PostsPage/PostsPage';
 
 const Posts = () => {
   return (
-    <>
+    <main>
       <Header />
       <PostsPage />
-    </>
+    </main>
   );
 };
 

@@ -12,5 +12,5 @@ export const AnimatedProgressBar = ({maxProgress, initialProgress}: {maxProgress
     return () => clearTimeout(timer)
   },[])
 
-  return <Progress value={progress}  />
+  return <Progress aria-label="Animated Progress Bar" value={progress}  />
 }
