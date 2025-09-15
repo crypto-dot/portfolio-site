@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     description: "Fullstack developer blog covering web development, machine learning, AI, and infrastructure. In-depth tutorials, insights, and projects spanning React, Python, DevOps, and modern tech stack solutions.",
     type: "website",
     siteName: "Carlos Arbizu | Developer",
+    locale: 'en_US'
   },
 };
 
