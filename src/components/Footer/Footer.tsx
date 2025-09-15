@@ -4,11 +4,12 @@ import { Button } from '../shadcn-ui/button'
 import { Github } from 'lucide-react'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export const Footer = () => {
     const yearContainer = useRef<HTMLDivElement>(null);
     const year = new Date().getFullYear();
-
+    const pathname = usePathname();
     useEffect(() => {
         if (yearContainer.current) {
             yearContainer.current.innerHTML = year.toString();
@@ -27,14 +28,14 @@ export const Footer = () => {
         <div className="flex items-center flex-col">
           <h3 className=" font-semibold mb-4 text-primary">NAVIGATION.MAP</h3>
           <div className="space-y-2">
-            <Link  href="/projects" className="block text-muted-foreground hover:text-primary transition-colors  text-sm w-fit">
+          <Link href="/home" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/' ? 'text-primary' : 'text-muted-foreground'}`}>
+              <span className="text-primary mr-2">&rarr;</span>HOME
+            </Link>
+            <Link  href="/projects" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/projects' ? 'text-primary' : 'text-muted-foreground'}`}>
               <span className="text-primary mr-2">&rarr;</span>PROJECTS
             </Link>
-            <Link href="/blog" className="block text-muted-foreground hover:text-primary transition-colors  text-sm w-fit">
-              <span className="text-primary mr-2">&rarr;</span>BLOG
-            </Link>
-            <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors  text-sm w-fit">
-              <span className="text-primary mr-2">&rarr;</span>CONTACT
+            <Link href="/posts" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/posts' ? 'text-primary' : 'text-muted-foreground'}`}>
+              <span className="text-primary mr-2">&rarr;</span>POSTS
             </Link>
           </div>
         </div>
@@ -55,7 +56,7 @@ export const Footer = () => {
       </div>
       
       <div className=" mt-8 pt-8 text-center w-fit mx-auto "  >
-        <p className="text-gray-400  text-sm">
+        <p className="text-muted-foreground  text-sm">
           <span className="text-primary">©</span> <span ref={yearContainer}></span> Arbizu.dev | ALL_RIGHTS_RESERVED
         </p>
       </div>

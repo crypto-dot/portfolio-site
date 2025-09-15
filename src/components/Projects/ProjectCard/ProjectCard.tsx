@@ -1,13 +1,12 @@
 "use client"
-import React, { useRef } from 'react'
+import React from 'react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../../shadcn-ui/card'
 import { Badge } from '../../shadcn-ui/badge'
 import { ExternalLink, Github, Terminal } from 'lucide-react'
 import { PrimaryAnchorButton } from '../../AnchorButtons/PrimaryAnchorButton/PrimaryAnchorButton'
 import { WhiteAnchorButton } from '../../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
-import { motion, useSpring } from 'motion/react'
+import { motion } from 'motion/react'
 import { Project } from '../../../lib/types/project'
-import { springValue } from 'motion/react'
 export const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
     return (
         <motion.div 
@@ -19,7 +18,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
+                    <div className="absolute inset-0" />
                     <div className="absolute top-4 right-4">
                         <Badge className={`${project.status === 'Live' ? 'text-green-400 bg-[oklch(0.2525 0.0768 137.21 / 77%)]' : 'text-orange-400 bg-[oklch(0.577 0.245 27.325 / 77%)]'}  backdrop-blur-[15px]`}>
                             {project.status}

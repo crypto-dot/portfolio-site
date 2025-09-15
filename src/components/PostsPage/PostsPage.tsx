@@ -105,7 +105,7 @@ export const PostsPage = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Card className="h-full  transition-all duration-300 cursor-pointer">
+              <Card className="h-full pt-6 transition-all duration-300 cursor-pointer">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -118,11 +118,11 @@ export const PostsPage = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-2">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-4">
                     {post.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-muted-foreground line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
@@ -150,7 +150,7 @@ export const PostsPage = () => {
                   <div className="flex items-center gap-3">
                     <Avatar className="w-8 h-8 border border-primary">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />
-                      <AvatarFallback className="bg-secondary text-primary text-xs">
+                      <AvatarFallback className=" text-xs">
                         {post.author.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
                     </Avatar>

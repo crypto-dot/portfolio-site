@@ -154,10 +154,10 @@ export const ProjectsPage = () => {
             >
               <Card className="h-full  transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* Project Image */}
-                <div className="relative h-48 bg-slate-700 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-500/20" />
+                <div className="relative h-48 overflow-hidden bg-secondary">
+                  <div className="absolute inset-0" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl  text-primary/30">
+                    <div className="text-6xl  text-secondary-foreground">
                       {project.title.charAt(0)}
                     </div>
                   </div>
@@ -184,11 +184,11 @@ export const ProjectsPage = () => {
                     </Badge>
                   </div>
                   
-                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-2">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-4">
                     {project.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-muted-foreground line-clamp-3">
+                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2">
                     {project.description}
                   </CardDescription>
                 </CardHeader>

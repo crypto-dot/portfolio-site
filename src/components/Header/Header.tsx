@@ -7,10 +7,11 @@ import { TextRevealListItems } from '../AnimatedTextReveal/AnimatedTextReveal'
 import { AnchorItemProps } from '../AnimatedTextReveal/AnimatedTextReveal.types'
 import { motion, AnimatePresence } from 'motion/react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
-
+  const pathname = usePathname()
   const navigationItems : AnchorItemProps[] = [
     { href: '/', number: 1, label: 'HOME' },
     { href: '/projects', number: 2, label: 'PROJECTS' },
@@ -89,7 +90,6 @@ export const Header = () => {
               </motion.div>
             </motion.button>
 
-            {/* Animated Dropdown Menu */}
             <AnimatePresence>
               {isOpen && (
                 <motion.div
@@ -103,26 +103,23 @@ export const Header = () => {
                     stiffness: 300,
                     damping: 30
                   }}
-                  className="absolute left-[-109px] top-full mt-2 w-64 bg-slate-800/95 backdrop-blur-md rounded-xl shadow-2xl overflow-hidden z-50"
+                  className="absolute left-[-109px] top-full mt-4 w-64 bg-secondary rounded-xl overflow-hidden z-50"
                 >
-                  {/* Dropdown Header */}
                   <motion.div 
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5, duration: 0.3 }}
-                    className="px-4 py-3 bg-secondary/50"
+                    className="px-4 py-3 border-b border-gray-400/20"
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <Terminal className="w-4 h-4 text-primary" />
-                      <span className="text-sm  text-primary">NAVIGATION</span>
+                      <span className="text-sm  text-secondary-foreground">NAVIGATION</span>
                     </div>
                     
 
                   </motion.div>
 
-                  {/* Main Navigation Items */}
                   <div className="py-2">
-                    {/* Quick Navigation Links */}
                     <div className="flex gap-2 flex-col">
                       {navigationItems.map((item, index) => (
                         <motion.div
@@ -149,10 +146,11 @@ export const Header = () => {
                         >
                           <Link
                             href={item.href}
-                            className="flex items-center gap-2 px-3 py-2 text-xs  transition-all duration-300 cursor-pointer"
+                            className="flex items-center gap-2 px-3 py-2 text-xs text-secondary-foreground transition-all duration-300 cursor-pointer"
                             onClick={() => setIsOpen(false)}
                           >
-                            {navigationIcons[item.label as keyof typeof navigationIcons]} {item.label}
+                            <span className={`${pathname === item.href ? 'text-primary' : 'text-secondary-foreground'}`}>
+                            {navigationIcons[item.label as keyof typeof navigationIcons]} </span>{item.label}
       
                           </Link>
                         </motion.div>
@@ -160,8 +158,7 @@ export const Header = () => {
                     </div>
                   </div>
 
-                  {/* Dropdown Footer */}
-                  <motion.div 
+                  {/* <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.3 }}
@@ -170,7 +167,7 @@ export const Header = () => {
                     <div className="text-xs  text-gray-500 text-center">
                       Press ESC to close
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               )}
             </AnimatePresence>

@@ -21,7 +21,7 @@ export const BlogList = () => {
           <div className="grid lg:grid-cols-2 gap-8 mx-auto">
             {blogPosts.slice(0, 4).map((post, index) => (
               <motion.div initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} transition={{ duration: .75 }} viewport={{ once: true }} key={post.id}>
-              <Card key={post.id} className="transition-all duration-300 cursor-pointer h-[100%]">
+              <Card key={post.id} className="transition-all duration-300 cursor-pointer h-[100%] pt-6">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
@@ -30,10 +30,10 @@ export const BlogList = () => {
                     </div>
                     <span className="text-xs  text-gray-400">{post.readTime} READ</span>
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors  text-xl">
+                  <CardTitle className="group-hover:text-primary transition-colors mb-4 text-xl">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground line-clamp-2">
+                  <CardDescription className="text-muted-foreground line-clamp-2 mb-2">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
@@ -52,7 +52,7 @@ export const BlogList = () => {
                   <div className="flex items-center gap-3">
                     <Avatar className="w-8 h-8">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />
-                      <AvatarFallback className="bg-primary text-primary-foreground text-xs">CA</AvatarFallback>
+                      <AvatarFallback className="text-xs">CA</AvatarFallback>
                     </Avatar>
                     <div>
                       <div className="text-sm">{post.author}</div>
