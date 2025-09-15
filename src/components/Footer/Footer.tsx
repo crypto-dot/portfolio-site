@@ -43,16 +43,12 @@ export const Footer = () => {
         <div className="flex items-center flex-col md:items-end">
           <h3 className=" font-semibold mb-4 text-primary">EXTERNAL.LINKS</h3>
           <div className="flex space-x-4">
-            <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-primary hover:bg-cyan-500/10 p-2" asChild>
-              <Link aria-label="GitHub" href="https://github.com/crypto-dot">
+              <Link aria-label="GitHub" className="p-2" href="https://github.com/crypto-dot">
               <Github className="w-5 h-5" />
               </Link>
-            </Button>
-            <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-primary hover:bg-cyan-500/10 p-2">
             <Link aria-label="LinkedIn" className="p-2" href="https://www.linkedin.com/in/carlos-a-7a6701162//">
               <Linkedin className="w-5 h-5" />
               </Link>
-            </Button>
           </div>
         </div>
       </div>
