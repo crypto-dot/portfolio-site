@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react'
 import { Button } from '../shadcn-ui/button'
 import { Github } from 'lucide-react'
-import { ExternalLink } from 'lucide-react'
+import { Linkedin } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -49,8 +49,8 @@ export const Footer = () => {
               </Link>
             </Button>
             <Button size="sm" variant="ghost" className="text-muted-foreground hover:text-primary hover:bg-cyan-500/10 p-2">
-            <Link aria-label="LinkedIn" className="p-2" href="https://www.linkedin.com/in/arbizu/">
-              <ExternalLink className="w-5 h-5" />
+            <Link aria-label="LinkedIn" className="p-2" href="https://www.linkedin.com/in/carlos-a-7a6701162//">
+              <Linkedin className="w-5 h-5" />
               </Link>
             </Button>
           </div>
