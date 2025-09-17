@@ -4,7 +4,7 @@ export const featuredProjects: Project[] = [
     {
       id: 1,
       title: "Pylot",
-      description: "Multi-tenant platform powering 200+ sites with a React frontend and headless WordPress CMS",
+      description: "Developed and optimized Pylot™, Imaginuity's enterprise-grade digital marketing platform serving multi-location businesses including commercial real estate companies, shopping centers, and franchise organizations. Collaborated on both backend PHP architecture and frontend React development for a scalable cloud-based platform that enables rapid deployment of brand-consistent websites across hundreds of locations while maintaining local customization capabilities.",
       longDescription: "Developed and optimized Pylot™, Imaginuity's enterprise-grade digital marketing platform serving multi-location businesses including commercial real estate companies, shopping centers, and franchise organizations. Collaborated on both backend PHP architecture and frontend React development for a scalable cloud-based platform that enables rapid deployment of brand-consistent websites across hundreds of locations while maintaining local customization capabilities.",
       imageUrl: "images/Pylot.png",
       technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint","CI/CD"],

@@ -59,7 +59,7 @@ export const ProjectsPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">DEVELOPMENT CYCLES</h1>
+          <h1 className="text-4xl md:text-7xl font-bold mb-4 ">DEVELOPMENT CYCLES</h1>
           <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
             A collection of projects showcasing my expertise in modern web development, AI integration, and full-stack solutions.
           </p>
@@ -183,16 +183,16 @@ export const ProjectsPage = () => {
                     </Badge>
                   </div>
                   
-                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-4">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl md:text-2xl mb-4">
                     {project.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2">
+                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2 text-[1rem] leading-[1.75]">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent>
+                <CardContent className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.slice(0, 4).map((tech) => (
                           <Badge 
@@ -231,7 +231,7 @@ export const ProjectsPage = () => {
                   </div>
                 </CardContent>
                 
-                <CardFooter className="flex items-center justify-between mt-auto">
+                <CardFooter className="flex items-center justify-between">
                   <div className="flex gap-2">
                     {project.liveUrl && (
                       <Button

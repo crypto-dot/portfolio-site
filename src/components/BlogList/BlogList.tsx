@@ -30,10 +30,10 @@ export const BlogList = () => {
                     </div>
                     <span className="text-xs  text-gray-400">{post.readTime} READ</span>
                   </div>
-                  <CardTitle className="group-hover:text-primary transition-colors mb-4 text-xl">
+                  <CardTitle className="group-hover:text-primary transition-colors mb-4 text-xl md:text-2xl">
                     {post.title}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground line-clamp-2 mb-2">
+                  <CardDescription className="text-muted-foreground line-clamp-2 mb-2 text-[1rem] leading-[1.75]">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>

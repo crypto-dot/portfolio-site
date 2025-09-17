@@ -31,15 +31,15 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                         <Terminal className="w-4 h-4 text-primary" />
                         <span className="text-xs  text-primary">PROJECT_{String(index + 1).padStart(3, '0')}</span>
                     </div>
-                    <CardTitle className="text-xl mb-4 group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl md:text-2xl mb-4 group-hover:text-primary transition-colors">
                         {project.title}
                     </CardTitle>
-                    <CardDescription className="text-muted-foreground mb-2">
+                    <CardDescription className="text-muted-foreground mb-2 text-[1rem] leading-[1.75]">
                         {project.description}
                     </CardDescription>
                 </CardHeader>
 
-                <CardContent>
+                <CardContent className="mt-auto">
                     <div className="space-y-3">
                         <h2 className="text-xs  mb-2 text-white"> TECH STACK:</h2>
                         <div className="flex flex-wrap gap-2">
@@ -52,7 +52,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                     </div>
                 </CardContent>
 
-                <CardFooter className="flex gap-2 mt-auto">
+                <CardFooter className="flex gap-2">
                     {project.githubUrl && (
                         <PrimaryAnchorButton text="SOURCE" link={project.githubUrl} >
                             <Github className="w-4 h-4" />

@@ -39,8 +39,8 @@ export const PostsPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 ">TECHNICAL LOGS</h1>
-          <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+          <h1 className="text-4xl md:text-7xl font-bold mb-4 ">TECHNICAL LOGS</h1>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-[1.75]">
             A collection of technical insights, development methodologies, and knowledge sharing from my journey as a developer.
           </p>
         </motion.div>
@@ -118,16 +118,16 @@ export const PostsPage = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="group-hover:text-primary transition-colors  text-xl mb-4">
+                  <CardTitle className="group-hover:text-primary transition-colors  text-xl md:text-2xl mb-4">
                     {post.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2">
+                  <CardDescription className="text-muted-foreground line-clamp-3 mb-2 text-[1rem] leading-[1.75]">
                     {post.excerpt}
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent>
+                <CardContent className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {post.tags.slice(0, 3).map((tag) => (
                       <Badge 
@@ -146,7 +146,7 @@ export const PostsPage = () => {
                   </div>
                 </CardContent>
                 
-                <CardFooter className="flex items-center justify-between mt-auto">
+                <CardFooter className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Avatar className="w-8 h-8 border border-primary">
                       <AvatarImage src={post.authorAvatar} alt={post.author} />

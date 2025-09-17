@@ -55,7 +55,7 @@ export const Hero = () => {
                 </div>
                 
                 <AnimatedText>
-                  <p className="text-lg text-secondary max-w-lg animated-text">
+                  <p className="text-lg text-secondary animated-text leading-[1.75]">
                   Hello 👋, I'm Carlos Arbizu—a full-stack developer passionate about solving complex technical challenges. I build high-performance web applications using C#, Typecsript, and React that scale with your business. From refactoring massive codebases to implementing modern CI/CD workflows, I help companies modernize their tech stack while improving user experience and operational efficiency.
                   </p>
                 </AnimatedText>
