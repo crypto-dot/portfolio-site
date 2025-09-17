@@ -1,11 +1,5 @@
 "use client"
 import React, {useRef, useEffect} from 'react';
-import { Button } from '@/components/shadcn-ui/button';
-import { 
-  Github, 
-  ExternalLink, 
-  Terminal,
-} from 'lucide-react';
 import Projects from '@/components/Projects/Index';
 import Hero from '@/components/Hero/Index';
 import BlogList from '@/components/BlogList/Index';

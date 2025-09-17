@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useRef } from 'react'
-import { Button } from '../shadcn-ui/button'
 import { Github } from 'lucide-react'
 import { Linkedin } from 'lucide-react'
 import Link from 'next/link'

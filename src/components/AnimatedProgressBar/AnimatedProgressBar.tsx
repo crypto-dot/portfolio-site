@@ -10,7 +10,7 @@ export const AnimatedProgressBar = ({maxProgress, initialProgress}: {maxProgress
         setProgress(maxProgress)
     }, 100)
     return () => clearTimeout(timer)
-  },[])
+  },[maxProgress])
 
   return <Progress aria-label="Animated Progress Bar" value={progress}  />
 }

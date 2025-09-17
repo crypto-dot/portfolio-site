@@ -3,7 +3,7 @@
 import { Ticker } from "motion-plus/react"
 import { motion } from "motion/react"
 import Image from "next/image"
-function Photo({ src }: { src: string; }) {
+function Photo() {
     return (
         <motion.div className="photo">
             <Image className="scale-160"
@@ -22,7 +22,7 @@ export const Banner = () => {
         <h1 className="text-2xl font-bold py-4 text-center"> SITE IS CURRENTLY UNDER CONSTRUCTION</h1>
             <Ticker
                 items={[
-                    <Photo src="images/cautionTape.png" key="1" />,
+                    <Photo key="1" />,
                 ]}
                 className="ticker"
             />

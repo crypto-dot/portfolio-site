@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '../shadcn-ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '../shadcn-ui/avatar';
 import { Badge } from '../shadcn-ui/badge';
-import { Button } from '../shadcn-ui/button';
 import { Input } from '../shadcn-ui/input';
-import { ChevronRight, Calendar, Terminal, Search, Clock, User } from 'lucide-react';
+import { ChevronRight, Calendar, Terminal, Search, Clock } from 'lucide-react';
 import { blogPosts } from '../../lib/testing/mocks/blog/blog';
 import { motion } from 'motion/react';
-import { BlogPost } from '../../lib/types/blog';
 import { FilterButton } from '../FilterButton/FilterButton';
 
 export const PostsPage = () => {

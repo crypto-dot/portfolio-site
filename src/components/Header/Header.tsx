@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useRef, useEffect } from 'react'
-import { PrimaryAnchorButton } from '../AnchorButtons/PrimaryAnchorButton/PrimaryAnchorButton'
 import { Terminal, Menu, X, Home, Code, FileText } from 'lucide-react'
 import { TextRevealListItems } from '../AnimatedTextReveal/AnimatedTextReveal'
 import { AnchorItemProps } from '../AnimatedTextReveal/AnimatedTextReveal.types'

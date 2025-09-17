@@ -32,7 +32,7 @@ export const AnimatedText = ({ children, duration = 2, bounce = 0 } : { children
                 }
             )
         })
-    }, [])
+    }, [duration, bounce])
 
     return (
         <div className="animated-container" ref={containerRef}>
