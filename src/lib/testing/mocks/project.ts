@@ -5,9 +5,9 @@ export const featuredProjects: Project[] = [
       id: 1,
       title: "Pylot",
       description: "Multi-tenant platform powering 200+ sites with a React frontend and headless WordPress CMS",
-      longDescription: "A comprehensive multi-tenant platform that powers over 200 websites with a modern React frontend and headless WordPress CMS. Built with scalability and performance in mind, featuring automated deployments, custom theme development, and advanced content management capabilities.",
+      longDescription: "Developed and optimized Pylot™, Imaginuity's enterprise-grade digital marketing platform serving multi-location businesses including commercial real estate companies, shopping centers, and franchise organizations. Collaborated on both backend PHP architecture and frontend React development for a scalable cloud-based platform that enables rapid deployment of brand-consistent websites across hundreds of locations while maintaining local customization capabilities.",
       imageUrl: "images/Pylot.png",
-      technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint"],
+      technologies: ["Python", "React", "AstroJS", "WordPress", "SCSS", "TypeScript", "Vitest", "Prettier", "PHP", "ESLint","CI/CD"],
       liveUrl: "https://imaginuity.com/pylot",
       status: "Live",
       category: "Full Stack",
@@ -19,10 +19,10 @@ export const featuredProjects: Project[] = [
     {
       id: 2,
       title: "Dallas Market Center",
-      description: "Developed and optimized a large-scale web platform using C#, Razor Pages, jQuery, and SCSS, supporting dynamic UI components and complex business logic.",
-      longDescription: "A large-scale e-commerce and event management platform for Dallas Market Center, featuring complex business logic, dynamic UI components, and high-performance optimization. Handles thousands of concurrent users during major trade shows and events.",
+      description: "Led frontend development and supported backend development for Dallas Market Center's enterprise B2B trade platform, serving North America's largest wholesale marketplace connecting 200,000+ buyers from 85 countries with 25,000+ brands. As the primary frontend developer, I architected responsive user interfaces for a 5-million square foot virtual marketplace facilitating billions in wholesale transactions across gift, home décor, lighting, apparel, and accessories industries. On the backend, I supported the development of the platform's core functionality, including user authentication, product catalog retrieval, and order processing.",
+      longDescription: "Led frontend development for Dallas Market Center's enterprise B2B trade platform, serving North America's largest wholesale marketplace connecting 200,000+ buyers from 85 countries with 25,000+ brands. As the primary frontend developer, I architected responsive user interfaces for a 5-million square foot virtual marketplace facilitating billions in wholesale transactions across gift, home décor, lighting, apparel, and accessories industries.... (expand)",
       imageUrl: "images/DallasMarketCenter.png",
-      technologies: ["Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
+      technologies: ["Azure","Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
       liveUrl: "https://dallasmarketcenter.com",
       status: "Live",
       category: "Full Stack",
@@ -34,18 +34,34 @@ export const featuredProjects: Project[] = [
     {
       id: 3,
       title: "WeBuyUglyHouses",
-      description: "User friendly real estate website for buying and selling houses along with sister site",
-      longDescription: "A comprehensive real estate platform designed for buying and selling properties, featuring advanced search capabilities, property valuation tools, and seamless user experience across multiple sister sites.",
+      description: "Developed and optimized the flagship We Buy Ugly Houses® website using C# .NET and Kentico CMS, serving America's largest home-buying franchise network. I helped build a high-conversion lead generation platform that handles thousands of property inquiries nationwide, implementing advanced form workflows and location-based routing to 1,100+ franchisees across 46 states",
+      longDescription: "Key Technical Achievements:Architected scalable C# backend systems handling enterprise-level traffic for a multi-million dollar franchise operationImplemented responsive Razor Pages with custom SCSS styling for optimal mobile and desktop user experienceDesigned comprehensive A/B testing framework to optimize conversion rates across multiple landing page variantsIntegrated complex Kentico CMS workflows for content management across franchise locations. As a team member, I also built location-aware functionality connecting users to local property specialists based on geographic data. Business Impact: Enhanced the digital presence of America's #1 cash home buyer brand, supporting their acquisition of 150,000+ properties since 1996. The optimized platform significantly improved lead quality and conversion rates through strategic UX improvements and technical performance enhancements.",
       imageUrl: "images/weBuyUglyHouses.png",
-      technologies: ["A-B testing", "Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
+      technologies: ["A-B testing", "Kentico CMS", "Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
       liveUrl: "https://webuyuglyhouses.com",
       status: "Live",
       category: "Full Stack",
       featured: true,
       year: 2023,
       client: "WeBuyUglyHouses",
-      duration: "2 years"
+      duration: "1 years"
+    },
+    {
+      id: 4,
+      title: "HomeVestors",
+      description: "Engineered the HomeVestors® corporate website using C# .NET and Kentico CMS, supporting the parent company's 29-year legacy in real estate investment. Developed a sophisticated customer testimonial system and franchise locator functionality serving potential sellers across multiple markets.",
+      longDescription: "Key Technical Achievements: Architected scalable C# backend systems handling enterprise-level traffic for a multi-million dollar franchise operationImplemented responsive Razor Pages with custom SCSS styling for optimal mobile and desktop user experienceDesigned comprehensive A/B testing framework to optimize conversion rates across multiple landing page variantsIntegrated complex Kentico CMS workflows for content management across franchise locations. Built location-aware functionality connecting users to local property specialists based on geographic data. Business Impact: Enhanced the digital presence of America's #1 cash home buyer brand, supporting their acquisition of 150,000+ properties since 1996. The optimized platform significantly improved lead quality and conversion rates through strategic UX improvements and technical performance enhancements.",
+      imageUrl: "images/Homevestors.png",
+      technologies: ["A-B testing", "Kentico CMS", "Razor Pages", "jQuery", "SCSS", "C#", "ASP.NET", "SQL Server", "Azure", "CI/CD", "Webpack", "Babel", "ESLint", "Prettier"],
+      liveUrl: "https://www.homevestors.com/",
+      status: "Live",
+      category: "Full Stack",
+      featured: true,
+      year: 2023,
+      client: "HomeVestors",
+      duration: "1 years"
     }
+
   ];
 
 export const allProjects: Project[] = [

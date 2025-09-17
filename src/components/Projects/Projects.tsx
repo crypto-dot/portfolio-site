@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { ChevronRight } from 'lucide-react'
 import { featuredProjects } from '../../lib/testing/mocks/project'
 import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'

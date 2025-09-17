@@ -28,7 +28,7 @@ export const Hero = () => {
                   </h1>
                   <div className=" text-sm md:text-xl text-secondary ">
                     <div className="flex items-center gap-2">
-                      <span className="text-green-400">&rarr;</span> 
+                      <span className="text-primary">&rarr;</span> 
                       <AnimatedText duration={2} bounce={.75}>
                       <p className="animated-text mb-2">
                       FullStack_Developer.exe
@@ -36,7 +36,7 @@ export const Hero = () => {
                       </AnimatedText>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-green-400">&rarr;</span> 
+                      <span className="text-primary">&rarr;</span> 
                       <AnimatedText duration={3} bounce={.75}>
                       <p className="animated-text mb-2">
                       Blockchain_Enthusiast.dll
@@ -44,7 +44,7 @@ export const Hero = () => {
                       </AnimatedText>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="text-green-400">&rarr;</span> 
+                      <span className="text-primary">&rarr;</span> 
                       <AnimatedText duration={4} bounce={.75}>
                     <p className="animated-text mb-2">
                     AI_Enthusiast.py
@@ -56,8 +56,7 @@ export const Hero = () => {
                 
                 <AnimatedText>
                   <p className="text-lg text-secondary max-w-lg animated-text">
-                  Architecting the future of web technology through cutting-edge development, 
-                  blockchain innovation, and artificial intelligence integration.
+                  Hello 👋, I'm Carlos Arbizu—a full-stack developer passionate about solving complex technical challenges. I build high-performance web applications using C#, Typecsript, and React that scale with your business. From refactoring massive codebases to implementing modern CI/CD workflows, I help companies modernize their tech stack while improving user experience and operational efficiency.
                   </p>
                 </AnimatedText>
                 
