@@ -8,6 +8,7 @@ import { Banner } from '@/components/Banner/Banner';
 import { ReactLenis } from 'lenis/react';
 import type { LenisRef } from 'lenis/react';
 import { cancelFrame, frame } from 'framer-motion';
+import SEO from '@/components/SEO/SEO';
 
 const Home = () => {
   const yearContainer = useRef<HTMLDivElement>(null);
@@ -32,6 +33,7 @@ const Home = () => {
   }, []);
   return (
     <main>
+      <SEO title="Carlos Arbizu | Developer" description="Full stack developer creating AI-powered web applications that solve real business problems. See my portfolio of machine learning and software development projects." canonical="https://arbizu.dev" />
     <ReactLenis root ref={lenisRef}  options={{ autoRaf: false }}>
       <Header />
       <Banner />
