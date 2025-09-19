@@ -45,7 +45,7 @@ export const Footer = () => {
               <Link aria-label="GitHub" className="p-2" href="https://github.com/crypto-dot">
               <Github className="w-5 h-5" />
               </Link>
-            <Link aria-label="LinkedIn" className="p-2" href="https://www.linkedin.com/in/carlos-a-7a6701162//">
+            <Link aria-label="LinkedIn" className="p-2" href="https://www.linkedin.com/in/carlos-a-7a6701162/">
               <Linkedin className="w-5 h-5" />
               </Link>
           </div>
