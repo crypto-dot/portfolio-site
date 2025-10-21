@@ -7,7 +7,7 @@ export interface Project {
     liveUrl?: string;
     githubUrl?: string;
     technologies: string[];
-    status: 'Live' | 'In Development' | 'Completed' | 'Archived';
+    status: 'Live' | 'In Development' | 'Archived';
     category: 'Web Development' | 'AI/ML' | 'Mobile' | 'Desktop' | 'Full Stack' | 'Frontend' | 'Backend';
     featured?: boolean;
     year: number;

@@ -162,7 +162,7 @@ export const ProjectsPage = () => {
                   </div>
                   {project.featured && (
                     <div className="absolute top-4 right-4">
-                      <Badge className="bg-secondary text-secondary-foreground  text-xs">
+                      <Badge className="bg-primary text-primary-foreground text-xs">
                         FEATURED
                       </Badge>
                     </div>
