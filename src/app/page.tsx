@@ -10,8 +10,6 @@ import type { LenisRef } from 'lenis/react';
 import { cancelFrame, frame } from 'framer-motion';
 
 const Home = () => {
-  const yearContainer = useRef<HTMLDivElement>(null);
-  const year = new Date().getFullYear();
   const lenisRef = useRef<LenisRef>(null)
 
   useEffect(() => {
@@ -25,11 +23,6 @@ const Home = () => {
     return () => cancelFrame(update)
   }, [])
 
-  useEffect(() => {
-    if (yearContainer.current) {
-      yearContainer.current.innerHTML = year.toString();
-    }
-  }, []);
   return (
     <main>
     <ReactLenis root ref={lenisRef}  options={{ autoRaf: false }}>

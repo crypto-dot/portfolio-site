@@ -7,7 +7,7 @@ function Photo() {
     return (
         <motion.div className="photo">
             <Image className="scale-160"
-                src={`/images/cautionTape.png`}
+                src={`/images/cautionTape.webp`}
                 alt="caution tape"
                 width={200}
                 height={200}

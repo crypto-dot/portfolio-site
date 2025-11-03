@@ -1,19 +1,12 @@
-"use client"
-import React, { useEffect, useRef } from 'react'
+
+import React from 'react'
 import { Github } from 'lucide-react'
 import { Linkedin } from 'lucide-react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import  FooterNavigation  from './FooterNavigation/Index';
+import FooterYear  from './FooterYear/Index';
 
 export const Footer = () => {
-    const yearContainer = useRef<HTMLDivElement>(null);
-    const year = new Date().getFullYear();
-    const pathname = usePathname();
-    useEffect(() => {
-        if (yearContainer.current) {
-            yearContainer.current.innerHTML = year.toString();
-        }
-    }, []);
   return (
     <footer className="py-12">
     <div className="container mx-auto px-4 pt-12">
@@ -24,20 +17,7 @@ export const Footer = () => {
           </p>
         </div>
         
-        <div className="flex items-center flex-col">
-          <h3 className=" font-semibold mb-4 text-primary">NAVIGATION.MAP</h3>
-          <div className="space-y-2">
-          <Link href="/home" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/' ? 'text-primary' : 'text-muted-foreground'}`}>
-              <span className="text-primary mr-2">&rarr;</span>HOME
-            </Link>
-            <Link  href="/projects" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/projects' ? 'text-primary' : 'text-muted-foreground'}`}>
-              <span className="text-primary mr-2">&rarr;</span>PROJECTS
-            </Link>
-            <Link href="/posts" className={`block hover:text-primary transition-colors  text-sm w-fit ${pathname === '/posts' ? 'text-primary' : 'text-muted-foreground'}`}>
-              <span className="text-primary mr-2">&rarr;</span>POSTS
-            </Link>
-          </div>
-        </div>
+        <FooterNavigation />
         
         <div className="flex items-center flex-col md:items-end">
           <h3 className=" font-semibold mb-4 text-primary">EXTERNAL.LINKS</h3>
@@ -54,7 +34,7 @@ export const Footer = () => {
       
       <div className=" mt-8 pt-8 text-center w-fit mx-auto "  >
         <p className="text-muted-foreground  text-sm">
-          <span className="text-primary">©</span> <span ref={yearContainer}></span> Arbizu.dev | ALL_RIGHTS_RESERVED
+          <span className="text-primary">©</span> <FooterYear /> Arbizu.dev | ALL_RIGHTS_RESERVED
         </p>
       </div>
     </div>

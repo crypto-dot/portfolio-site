@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from '../shadcn-ui/badge';
 import { Button } from '../shadcn-ui/button';
 import { Input } from '../shadcn-ui/input';
-import { ChevronRight, Search, ExternalLink, Github, Calendar, Clock, User, Filter, Code, Smartphone, Monitor, Server } from 'lucide-react';
+import { ChevronRight, Search, ExternalLink, Github, Calendar, Clock, User, Code, Smartphone, Monitor, Server } from 'lucide-react';
 import { allProjects } from '../../lib/testing/mocks/project';
 import { motion } from 'motion/react';
 import { FilterButton } from '../FilterButton/FilterButton';

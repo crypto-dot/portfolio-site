@@ -7,13 +7,16 @@ import { PrimaryAnchorButton } from '../../AnchorButtons/PrimaryAnchorButton/Pri
 import { WhiteAnchorButton } from '../../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton'
 import { motion } from 'motion/react'
 import { Project } from '../../../lib/types/project'
+import Image from 'next/image'
 export const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
     return (
         <motion.div 
             transition={{ type: "spring", stiffness: 50, damping: 20,  duration: 1, bounce: 50 }} initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} viewport={{ once: true }} key={project.id}>
             <Card key={project.id} className="group transition-all duration-300 pt-0 overflow-hidden h-[100%]" >
                 <div className="relative overflow-hidden">
-                    <img
+                    <Image
+                    width={500}
+                    height={500}
                         src={project.imageUrl}
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
