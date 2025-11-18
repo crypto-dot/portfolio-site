@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import React, { useRef, useState } from 'react'
+import { Canvas, useFrame} from '@react-three/fiber'
 import { OrbitControls, Sphere, MeshDistortMaterial} from '@react-three/drei'
 import * as THREE from 'three'
 
@@ -11,9 +11,10 @@ interface GlobeProps {
 
 // Animated Globe Sphere Component
 const AnimatedGlobe = () => {
+  const INITIAL_DISTORT = 0.25
   const meshRef = useRef<THREE.Mesh>(null)
-  const materialRef = useRef<any>(null)
-  const [hovered, setHovered] = useState(false)
+  const [clicked, setClicked] = useState(false)
+  const [distort, setDistort] = useState(INITIAL_DISTORT)
   const mousePos = useRef(new THREE.Vector2(0, 0))
   const intersectionPoint = useRef(new THREE.Vector3())
   
@@ -27,22 +28,12 @@ const AnimatedGlobe = () => {
       mousePos.current.x = state.mouse.x
       mousePos.current.y = state.mouse.y
       
-      // If hovered, increase distortion at intersection point
-      if (materialRef.current && hovered) {
-        console.log('hovered')
-        materialRef.current.distort = THREE.MathUtils.lerp(
-          materialRef.current.distort,
-          1,
-          0.1
-        )
-        }   
-        //  else if (materialRef.current) {
-        //     materialRef.current.distort = THREE.MathUtils.lerp(
-        //     materialRef.current.distort,
-        //     0.5,
-        //     0.01
-        //     )
-        // }
+      // If hovered, increase distortion
+      if (clicked) {
+        setDistort(prev => THREE.MathUtils.lerp(prev, 1, 0.1))
+      } else {
+        setDistort(prev => THREE.MathUtils.lerp(prev, INITIAL_DISTORT, 0.1))
+      }
     }
   })
 
@@ -52,29 +43,22 @@ const AnimatedGlobe = () => {
       args={[1, 64, 64]}
       onPointerDown={(e) => {
         e.stopPropagation()
-        setHovered(true)
+        setClicked(true)
         document.body.style.cursor = 'pointer'
-        if (e.point && hovered) {
+        if (e.point && clicked) {
           intersectionPoint.current.copy(e.point)
         }
       }}
       onPointerUp={(e) => {
         e.stopPropagation()
-        setHovered(false)
+        setClicked(false)
         document.body.style.cursor = 'default'
-      }}
-      onPointerMove={(e) => {
-        e.stopPropagation()
-        if (e.point) {
-          intersectionPoint.current.copy(e.point)
-        }
       }}
     >
       <MeshDistortMaterial
-        ref={materialRef}
         color={ "#e78a53"}
         attach="material"
-        distort={0.35}
+        distort={distort}
         speed={ 1.5}
         roughness={0.4}
         metalness={0}
