@@ -1,7 +1,6 @@
 import React from 'react';
 import { Github, Play } from 'lucide-react';
 import { HeroAvatar } from './HeroAvatar/HeroAvatar';
-import { SkillsGrid } from '../SkillsGrid/SkillsGrid';
 import { PrimaryAnchorButton } from '../AnchorButtons/PrimaryAnchorButton/PrimaryAnchorButton';
 import { WhiteAnchorButton } from '../AnchorButtons/WhiteAnchorButton/WhiteAnchorButton';
 import AnimatedText from '../AnimatedText/Index';
@@ -72,9 +71,6 @@ export const Hero = () => {
 
               <HeroAvatar />
             </div>
-
-            {/* Skills Grid */}
-            <SkillsGrid />
           </div>
         </div>
       </section>
