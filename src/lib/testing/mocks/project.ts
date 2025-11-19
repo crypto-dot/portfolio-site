@@ -156,7 +156,7 @@ export const allProjects: Project[] = [
       liveUrl: "https://crypto-dot.github.io/FrontendMentorChallenge3/"
     },
     {
-      id: 9,
+      id: 10,
       title: "Grammar Checker",
       description: "Grammar checker built with Python, AstroJS, Typescript, BeautifulSoup, Zod, React, React-Hook-Form, Playwright and Tailwind CSS. Internal company hackathon project designed to see how much AI we can use to help speed our development while also building a useful internal tool. Some of the challenges were trying to figure out how to properly load sites that used Javascript and how to properly parse the data from the webcrawler.",
       longDescription: "A grammar checker built with Python, AstroJS, Typescript, BeautifulSoup, Zod, React, React-Hook-Form, Playwright and Tailwind CSS. Internal company hackathon project designed to see how much AI we can use to help speed our development while also building a useful internal tool. Some of the challenges were trying to figure out how to properly load sites that used Javascript and how to properly parse the data from the webcrawler.",
@@ -169,7 +169,7 @@ export const allProjects: Project[] = [
       duration: "1 day",
     },    
       {
-      id: 10,
+      id: 11,
       title: "Wikimasters",
       description: "Users can create and edit Wikipedia articles. This project was built with Next.js with Server Actions Tailwind CSS shadcn/ui Stack Auth with RBAC Neon Postgres Drizzle ORM Redis Vercel Blob Resend Custom Next.js API-based cron jobs.",  
       longDescription: "Users can create and edit Wikipedia articles. This project was built with Next.js with Server Actions Tailwind CSS shadcn/ui Stack Auth with RBAC Neon Postgres Drizzle ORM Redis Vercel Blob Resend Custom Next.js API-based cron jobs.",

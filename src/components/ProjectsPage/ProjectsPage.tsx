@@ -41,13 +41,14 @@ export const ProjectsPage = () => {
     const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+      
     const matchesCategory = selectedCategory ? project.category === selectedCategory : true;
     const matchesStatus = selectedStatus ? project.status === selectedStatus : true;
     const matchesFeatured = showFeaturedOnly ? project.featured : true;
     
     return matchesSearch && matchesCategory && matchesStatus && matchesFeatured;
   });
+  const sortedProjects = filteredProjects.sort((a, b) => a.featured ? -1 : 1);
 
   return (
     <div className="min-h-screen text-white pt-20">
