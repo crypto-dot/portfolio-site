@@ -167,6 +167,20 @@ export const allProjects: Project[] = [
       featured: true,
       year: 2025,
       duration: "1 day",
+    },    
+      {
+      id: 10,
+      title: "Wikimasters",
+      description: "Users can create and edit Wikipedia articles. This project was built with Next.js with Server Actions Tailwind CSS shadcn/ui Stack Auth with RBAC Neon Postgres Drizzle ORM Redis Vercel Blob Resend Custom Next.js API-based cron jobs.",  
+      longDescription: "Users can create and edit Wikipedia articles. This project was built with Next.js with Server Actions Tailwind CSS shadcn/ui Stack Auth with RBAC Neon Postgres Drizzle ORM Redis Vercel Blob Resend Custom Next.js API-based cron jobs.",
+      technologies: ["Next.js", "Server Actions", "Tailwind CSS", "shadcn/ui", "Stack Auth with RBAC", "Neon Postgres", "Drizzle ORM", "Redis", "Vercel Blob", "Resend", "Custom Next.js API-based cron jobs"],
+      githubUrl: "https://github.com/crypto-dot/Wikimasters",
+      status: "Live",
+      liveUrl: "https://wikimasters-git-main-cryptodot1s-projects.vercel.app/?_vercel_share=pT7rm4GCzYYrdcjhb3WEJvWy3OjNw0Lo",
+      category: "Full Stack",
+      featured: true,
+      year: 2025,
+      duration: "1 week",
     }
  
   // {
