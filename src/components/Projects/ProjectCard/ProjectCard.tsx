@@ -14,6 +14,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
             transition={{ type: "spring", stiffness: 50, damping: 20,  duration: 1, bounce: 50 }} initial={{ y: 100 * (index + 1) }} whileInView={{ y: 0 }} viewport={{ once: true }} key={project.id}>
             <Card key={project.id} className="group transition-all duration-300 pt-0 overflow-hidden h-[100%]" >
                 <div className="relative overflow-hidden">
+                    {project.imageUrl && project.imageUrl !== "" && (
                     <Image
                     width={500}
                     height={500}
@@ -21,6 +22,7 @@ export const ProjectCard = ({ project, index }: { project: Project, index: numbe
                         alt={project.title}
                         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    )}
                     <div className="absolute inset-0" />
                     <div className="absolute top-4 right-4">
                         <Badge className={`${project.status === 'Live' ? 'bg-[#10391e] text-green-400 border-green-500/50' : 'bg-[#574000] text-orange-400 border-orange-500/50'}`}>
