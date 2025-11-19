@@ -3,7 +3,7 @@ export interface Project {
     title: string;
     description: string;
     longDescription?: string;
-    imageUrl: string;
+    imageUrl?: string;
     liveUrl?: string;
     githubUrl?: string;
     technologies: string[];

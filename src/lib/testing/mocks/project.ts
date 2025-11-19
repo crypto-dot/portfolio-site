@@ -154,6 +154,19 @@ export const allProjects: Project[] = [
       year: 2022,
       duration: "1 day",
       liveUrl: "https://crypto-dot.github.io/FrontendMentorChallenge3/"
+    },
+    {
+      id: 9,
+      title: "Grammar Checker",
+      description: "Grammar checker built with Python, AstroJS, Typescript, BeautifulSoup, Zod, React, React-Hook-Form, Playwright and Tailwind CSS. Internal company hackathon project designed to see how much AI we can use to help speed our development while also building a useful internal tool. Some of the challenges were trying to figure out how to properly load sites that used Javascript and how to properly parse the data from the webcrawler.",
+      longDescription: "A grammar checker built with Python, AstroJS, Typescript, BeautifulSoup, Zod, React, React-Hook-Form, Playwright and Tailwind CSS. Internal company hackathon project designed to see how much AI we can use to help speed our development while also building a useful internal tool. Some of the challenges were trying to figure out how to properly load sites that used Javascript and how to properly parse the data from the webcrawler.",
+      technologies: ["Python", "AstroJS", "Typescript", "BeautifulSoup", "Zod", "React", "React-Hook-Form", "Tailwind CSS"],
+      githubUrl: "https://gitlab.com/imaginuity/public/shipathon-march/-/tree/feature/carbizuClaude",
+      status: "Archived",
+      category: "Full Stack",
+      featured: true,
+      year: 2025,
+      duration: "1 day",
     }
  
   // {
